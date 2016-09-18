@@ -1,0 +1,13 @@
+Minimal spanning tree algorithm is the way to find the minimum distance between two points.
+When finite directed graph is given, then from any node from grapg to any other node in the same graph can be traversed using with minimum distance.
+Travelling salesman problem is the famous problem which is solved by using the minimal spanning tree algorithm.
+In the game, we can designt the city. There will vaious spots in the city which will serve as the nodes in the graph.
+Distance between all connected nodes will given in miles.
+When Player starts the game, he/she will get the car.
+He/she has to drive to the destination which is also another spot in city. Driver will car to next connected spot.
+Once he/she reach the next spot, driver can see the distance of all connected spots from the spot where he/she is currently.
+
+Coditions.
+There will be limited fuel in the car which is sufficient for the car to reach the destination with shortest possible path.
+If driver takes wrong path, then car's fuel tank will get empty in between and game will be lost.
+We can hint menu where player can the see the distance between all the nodes for limited number of times.

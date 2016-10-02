@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=cipher
+comment0.text=\r\n\ Cipher\ interface\r\n\ \r\n\ @author\ (Niranjan\ Tungatkar)\ \r\n\ @version-1\ (02-10-2016)\r\n
+comment1.params=stringToencrypt
+comment1.target=java.lang.String\ encrypt(java.lang.String)
+comment2.params=stringTodecrypt
+comment2.target=java.lang.String\ decrypt(java.lang.String)
+comment3.params=
+comment3.target=java.lang.Object\ getHint()
+comment4.params=answer
+comment4.target=boolean\ checkAnswerValidity(java.lang.String)
+numComments=5

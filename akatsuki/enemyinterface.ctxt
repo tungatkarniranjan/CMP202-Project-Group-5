@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=enemyinterface
+comment0.text=\n\ Write\ a\ description\ of\ class\ EnemyInterface\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ turnRight()
+comment1.text=\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\n\ \n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \n
+comment2.params=
+comment2.target=void\ turnLeft()
+comment3.params=
+comment3.target=void\ move()
+comment4.params=
+comment4.target=void\ moveRandom()
+comment5.params=
+comment5.target=void\ attack()
+numComments=6

@@ -1,10 +1,10 @@
-public class cipherThree implements cipher{
+public class CipherThree implements cipher{
 
 	char city[];
     String key;
     String keySet;
 	
-    cipherThree(String m) {
+    CipherThree(String m) {
        key = m;
        keySet = "_abcdefghijklmnopqrstuvwxyz";
     }

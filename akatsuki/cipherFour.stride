@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class name="cipherFour" extends="Actor" enable="true" strideversion="1">
+    <javadoc xml:space="preserve">This class will implement the cipher interface.
+Version - 1 - Initial Commit
+                    Class structure defined</javadoc>
+    <imports>
+        <import target="java.util.*" enable="true"/>
+        <import target="greenfoot.*" enable="true"/>
+        <import target="java.awt.Color" enable="true"/>
+    </imports>
+    <implements>
+        <implementstype type="cipher"/>
+    </implements>
+    <fields>
+        <comment xml:space="preserve">//Hint Actor; This actor will store the hint image and will be displayed by the world method[ yet to be implemented]</comment>
+    </fields>
+    <constructors/>
+    <methods>
+        <method access="public" type="void" name="act" enable="true">
+            <javadoc xml:space="preserve">Act - do whatever the cipherFour wants to do. This method is called whenever the 'Act' or 'Run' button gets pressed in the environment.</javadoc>
+            <params/>
+            <throws/>
+            <body/>
+        </method>
+        <method access="public" type="String" name="encrypt" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <param type="String" name="stringToencrypt"/>
+            </params>
+            <throws/>
+            <body>
+                <return value="&quot;&quot;" value-java="&quot;&quot;" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="String" name="decrypt" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <param type="String" name="stringTodecrypt"/>
+            </params>
+            <throws/>
+            <body>
+                <return value="&quot;&quot;" value-java="&quot;&quot;" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="Object" name="getHint" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params/>
+            <throws/>
+            <body>
+                <return value="null" value-java="null" enable="true"/>
+            </body>
+        </method>
+        <method access="public" type="boolean" name="checkAnswerValidity" enable="true">
+            <javadoc xml:space="preserve"/>
+            <params>
+                <param type="String" name="answer"/>
+            </params>
+            <throws/>
+            <body>
+                <return value="true" value-java="true" enable="true"/>
+            </body>
+        </method>
+    </methods>
+</class>

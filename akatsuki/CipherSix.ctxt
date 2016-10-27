@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=CipherSix
+comment1.params=
+comment1.target=CipherSix()
+comment2.params=
+comment2.target=void\ keyExchange()
+comment3.params=stringToencrypt
+comment3.target=java.lang.String\ encrypt(java.lang.String)
+comment4.params=stringTodecrypt
+comment4.target=java.lang.String\ decrypt(java.lang.String)
+comment5.params=
+comment5.target=java.lang.Object\ getHint()
+comment6.params=answer
+comment6.target=boolean\ checkAnswerValidity(java.lang.String)
+comment7.params=userKey\ setKey
+comment7.target=double[]\ executeFirst(int,\ int)
+comment8.params=userAnswer\ csAnswer\ userKey
+comment8.target=double[]\ executeSecond(double,\ double,\ int)
+numComments=9

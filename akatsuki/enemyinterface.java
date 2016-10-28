@@ -23,10 +23,10 @@ public interface enemyinterface
     
     public void turnLeft();
     
-    public void move();
+    public void moveActor();
     
     public void moveRandom();
     
-    public void attack();
+    public void attack(int X, int Y);
     
 }

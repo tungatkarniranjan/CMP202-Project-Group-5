@@ -24,9 +24,9 @@ public class FranceMapScreen extends MapScreen
         int counter = 0;
         
            for(counter =0; counter < cities.size(); counter++){   
-           GreenfootImage cityImg = new GreenfootImage("images/"+cities.get(counter) + ".png");
-           City city = new City(cities.get(counter), cityImg, 100, 100);
-           CityStore.add(city);
+               GreenfootImage cityImg = new GreenfootImage("images/"+cities.get(counter) + ".png");
+               City city = new City(cityImg, 100, 100);
+               CityStore.add(city);
         }
     
         world = getWorld();

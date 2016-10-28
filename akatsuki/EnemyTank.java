@@ -14,7 +14,7 @@ public class EnemyTank extends Enemy
      */
     public void act() 
     {
-        // Add your action code here.
+        super.act();
     }    
     
     public void turnRight(){

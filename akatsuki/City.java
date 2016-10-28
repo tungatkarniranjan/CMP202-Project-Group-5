@@ -12,16 +12,18 @@ public class City extends Actor
      * Act - do whatever the city wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    String cityName;
     public void act() 
     {
         // Add your action code here.
     }    
     
-    public City(GreenfootImage img , int Xposition , int Yposition)
+    public City(String cityName, GreenfootImage img , int Xposition , int Yposition)
     {
         setLocation(Xposition ,Yposition);
         setImage(img);
         System.out.println(Xposition );
+        this.cityName = cityName;
         
     
     }    

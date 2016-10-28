@@ -48,6 +48,7 @@ public class MyWorld extends World
     public void initializeMapScreen(){
         MapScreen randomMap = randomUtility.getMapScreen();
         addObject(randomMap, 800, 400);
+        randomMap.plotCities();
         
     }
     

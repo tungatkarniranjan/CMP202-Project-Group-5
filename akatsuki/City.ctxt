@@ -1,9 +1,8 @@
 #BlueJ class context
 comment0.target=City
-comment0.text=\n\ Write\ a\ description\ of\ class\ city\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ city\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ city\ wants\ to\ do.\ This\ method\ is\ called\ whenever\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-comment2.params=img\ Xposition\ Yposition
-comment2.target=City(greenfoot.GreenfootImage,\ int,\ int)
+comment2.params=cityName\ img\ Xposition\ Yposition
+comment2.target=City(java.lang.String,\ greenfoot.GreenfootImage,\ int,\ int)
 numComments=3

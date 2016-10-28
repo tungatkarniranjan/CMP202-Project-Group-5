@@ -15,6 +15,7 @@ public class EnemyTank extends Enemy
     int count = 0;
     public void act() 
     {
+<<<<<<< HEAD
         if(state == "moveFree")
         {
             moveActor();
@@ -27,6 +28,10 @@ public class EnemyTank extends Enemy
             attack(positionX,positionY);
         }
     }
+=======
+        super.act();
+    }    
+>>>>>>> my_branch
     
     public void turnRight(){
     

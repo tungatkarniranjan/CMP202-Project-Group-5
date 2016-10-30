@@ -4,7 +4,7 @@ import java.util.*;
  * Write a description of class FranceMapScreen here.
  * 
  * @author (your name) 
- * @version (a version number or a date)
+ * @version (a version number or a date)wo
  */
 public class FranceMapScreen extends MapScreen
 {
@@ -16,25 +16,46 @@ public class FranceMapScreen extends MapScreen
     ArrayList <String>cities = new ArrayList<String>();
     World world;
     
+    EnemyTank enemyTank;
+    
     FranceMapScreen(){
+        world = getWorld();
         cities.add("Paris");
         cities.add("Munich");
         cities.add("Frankfurt");
             
         int counter = 0;
         
-           for(counter =0; counter < cities.size(); counter++){   
-               GreenfootImage cityImg = new GreenfootImage("images/"+cities.get(counter) + ".png");
-               City city = new City(cityImg, 100, 100);
-               CityStore.add(city);
+        for(counter =0; counter < cities.size(); counter++){   
+            GreenfootImage cityImg = new GreenfootImage("./images/"+cities.get(counter) + ".png");
+            City city = new City(cities.get(counter), cityImg, 100, 100);
+            CityStore.add(city);
         }
-    
-        world = getWorld();
-        world.addObject(CityStore.get(0), 100, 100);
     }
     
     public void act() 
     {
         // Add your action code here.
-    }    
+    }   
+    
+    public void plotCities(){
+ 
+        int x = 0;
+        int y = 0;
+        world = getWorld();
+        enemyTank = new EnemyTank();
+        for(int i = 0; i < CityStore.size(); i++)
+        {
+            world.addObject(CityStore.get(i), x+100, y+100);
+            x = x + 250;
+            y = y + 150;
+        }
+        
+        world.addObject(enemyTank, 100, 100);
+       
+        //City city1 = new City("Paris",null, 100, 100 );
+        //World world1 = getWorld();
+        //world1.addObject(city1,300, 300);
+    }
+    
 }

@@ -4,7 +4,8 @@ public class CipherSix implements cipher
 {
     // instance variables - replace the example below with your own
     private int x;
-
+    String givenString;
+    int secretKey;
     /**
      * Constructor for objects of class CipherSix
      */
@@ -29,17 +30,27 @@ public class CipherSix implements cipher
        System.out.println("Now you share your answer with your alliance to get the final shared key");
        double firstAnswer = scanner.nextDouble();
        double [] secondAnswer = executeSecond(answerArray[0], answerArray[1], userKey);
-       System.out.println("Congrats now you have successfully shared a common secret key. Your secret key is "+secondAnswer[0]);
+       this.secretKey = (int)(secondAnswer[0] + 0.5d);
+       System.out.println("Congrats now you have successfully shared a common secret key. Your secret key is "+this.secretKey);
     }
     
-        //encrypt the string provided in stringToencrypt
+    //encrypt the string provided in stringToencrypt
     public String encrypt(String stringToencrypt) {
-       return "123456";
+        this.givenString = stringToencrypt;
+        String encryptedString = new String();
+        String givenStringLowerCase = givenString.toLowerCase();
+        for(int i=0; i<givenStringLowerCase.length(); i++) {
+            char ch = givenStringLowerCase.charAt(i);
+            int pos = ch - 'a' + 1;
+            encryptedString += pos;
+        }
+        encryptedString += this.secretKey;
+        return encryptedString;
     }
     //Will return a decrypted string for an encrypted string sent in stringTodecrypt
     public String decrypt(String stringTodecrypt) {
        //String toEncrypt 
-       return "torronto";
+       return this.givenString;
     }
     //Will return an actor of Hint Class specific for that cipher
     public Object getHint() {

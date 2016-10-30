@@ -15,5 +15,8 @@ public class MapScreen extends Screens
     public void act() 
     {
         // Add your action code here.
-    }    
+    }
+    public void plotCities(){
+        // Nothing to de here.
+    }
 }

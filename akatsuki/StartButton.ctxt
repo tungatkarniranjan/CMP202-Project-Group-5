@@ -1,11 +1,12 @@
 #BlueJ class context
 comment0.target=StartButton
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ EnterButton\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ EnterButton\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ EnterButton\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=cls
 comment2.target=void\ removeCustomObjects(java.lang.Class)
 comment3.params=
 comment3.target=void\ displayMapScreen()
-numComments=4
+comment4.params=
+comment4.target=void\ turnCrank()
+numComments=5

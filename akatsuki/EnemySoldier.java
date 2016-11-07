@@ -1,15 +1,15 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class EnemyPlane here.
+ * Write a description of class EnemyTank here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class EnemyPlane extends Enemy
+public class EnemySoldier extends Enemy
 {
     /**
-     * Act - do whatever the EnemyPlane wants to do. This method is called whenever
+     * Act - do whatever the EnemySoldier wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int count = 0;
@@ -17,32 +17,45 @@ public class EnemyPlane extends Enemy
     {
         if(state == "moveFree")
         {
-            move(-1);
-            moveRandom();
+            moveActor();
             turnAtEdge();
             foundCity();
             foundTank();
         }
         else if(state == "attack")
         {
-            attackOn(positionX,positionY);
+            attack(positionX,positionY);
         }
-        
-        // if(this.onGoingAttack) {
-          //  attack();
-        //}
-    }    
+    }
+    
+    public void turnRight(){
+    
+    //turn right     
+    };
+    
+    public void turnLeft(){
+    //turn left
+    };
+    
+    public void move(){
+        //move forward
+    };
+    
+    public void moveRandom(){
+    
+    //moverandom
+    };
     
     
      public void turnAtEdge()
     {
         if ( atWorldEdge() )
         {
-            turn(17);
+            turn(45);
         }
     }
     
-    public void attackOn(int X, int Y)
+    public void attack(int X, int Y)
     {
              System.out.println(state);  
               moveActor();
@@ -51,7 +64,7 @@ public class EnemyPlane extends Enemy
               setRotation(0);
               Actor ammunition;
               if(this.count%70==0){
-                getWorld().addObject(new Ammunition(this,X,Y), getX(), getY());
+                getWorld().addObject(new BulletAmmunition(this,X,Y), getX(), getY());
 
         }
         count++;
@@ -65,14 +78,17 @@ public class EnemyPlane extends Enemy
               turn(17);
         }
     }
+    
      public void foundTank()
      {
         
-         if(checkActor(EnemyPlane.class))
+         if(checkActor(EnemyTank.class))
         {
               turn(17);
         }
         
      }
+    
+    
     
 }

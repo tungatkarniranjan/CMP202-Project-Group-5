@@ -64,7 +64,7 @@ public class EnemyTank extends Enemy
               setRotation(0);
               Actor ammunition;
               if(this.count%70==0){
-                getWorld().addObject(new Ammunition(this,X,Y), getX(), getY());
+                getWorld().addObject(new RocketAmmunition(this,X,Y), getX(), getY());
 
         }
         count++;

@@ -1,4 +1,11 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import org.restlet.*;
+import org.restlet.resource.*;
+import org.json.JSONObject ;
+import org.restlet.resource.*;
+import org.restlet.representation.* ;
+import org.restlet.ext.json.* ;
+import org.restlet.data.* ;
 
 /**
  * Write a description of class NewGameButton here.
@@ -12,6 +19,10 @@ public class NewGameButton extends Button
      * Act - do whatever the NewGameButton wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    private String URL = "http://10.0.0.173:8080/gumball" ;
+    ClientResource client = new ClientResource( URL ); 
+    
     public void act() 
     {
         // Add your action code here.
@@ -35,5 +46,20 @@ public class NewGameButton extends Button
        MyWorld world = (MyWorld)getWorld();
        world.initializeNewGameScreen();
     
+    }
+    
+    public void makeRequest(){
+    JSONObject start_game = new JSONObject();
+    start_game.put("action", "start_game");
+    try
+    {
+            Representation result_string = client.post(new JsonRepresentation(start_game), MediaType.APPLICATION_JSON);
+            System.out.println(result_string.getText());    
+    
+    }
+    catch(Exception error)
+    {
+            System.out.println(error);
+    }
     }
 }

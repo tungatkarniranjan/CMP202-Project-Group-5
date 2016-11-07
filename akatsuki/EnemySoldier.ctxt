@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=EnemySoldier
+comment0.text=\n\ Write\ a\ description\ of\ class\ EnemyTank\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=
+comment2.target=void\ turnRight()
+comment3.params=
+comment3.target=void\ turnLeft()
+comment4.params=
+comment4.target=void\ move()
+comment5.params=
+comment5.target=void\ moveRandom()
+comment6.params=
+comment6.target=void\ turnAtEdge()
+comment7.params=X\ Y
+comment7.target=void\ attack(int,\ int)
+comment8.params=
+comment8.target=void\ foundCity()
+comment9.params=
+comment9.target=void\ foundTank()
+numComments=10

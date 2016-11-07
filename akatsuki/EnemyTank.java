@@ -51,7 +51,7 @@ public class EnemyTank extends Enemy
     {
         if ( atWorldEdge() )
         {
-            turn(17);
+            turn(45);
         }
     }
     

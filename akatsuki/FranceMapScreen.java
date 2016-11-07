@@ -51,7 +51,7 @@ public class FranceMapScreen extends MapScreen
             y = y + 150;
         }
         
-        world.addObject(enemyTank, 100, 100);
+        world.addObject(enemyTank, 800, 400);
        
         //City city1 = new City("Paris",null, 100, 100 );
         //World world1 = getWorld();

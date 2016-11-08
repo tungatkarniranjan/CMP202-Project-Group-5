@@ -5,6 +5,7 @@ import org.restlet.Restlet;
 import org.restlet.data.Protocol;
 import org.restlet.routing.Router;
 import org.restlet.Component;
+import org.restlet.ext.jaxrs.JaxRsApplication;
 
 public class AkatsukiServer extends Application {
 
@@ -25,7 +26,9 @@ public class AkatsukiServer extends Application {
 	public Restlet createInboundRoot() {
 
 		Router router = new Router(getContext());
+		router.attach("/newgame", NewGameResource.class);
 		router.attach("/startGame", AkatsukiResource.class);
+		
 		return router;
 	}
 

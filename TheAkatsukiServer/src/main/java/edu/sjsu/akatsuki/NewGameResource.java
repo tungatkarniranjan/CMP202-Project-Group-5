@@ -5,6 +5,8 @@ import org.restlet.representation.*;
 import org.restlet.resource.Post;
 import org.restlet.resource.ServerResource;
 import java.io.IOException;
+
+import edu.sjsu.manager.Players;
 import edu.sjsu.utility.*;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,7 +32,9 @@ public class NewGameResource extends ServerResource {
 		} catch (JSONException | IOException e1) {
 			e1.printStackTrace();
 		}
-
+		
+		Players.addPlayers();
+		System.out.println(Players.getNoPlayers());
 		try {
 			gameEnvObject.put("map", GameEnvironment.getMapSelector());
 			gameEnvObject.put("city", GameEnvironment.getCitySelector());

@@ -27,8 +27,7 @@ public class AkatsukiServer extends Application {
 
 		Router router = new Router(getContext());
 		router.attach("/newgame", NewGameResource.class);
-		router.attach("/startGame", AkatsukiResource.class);
-		
+		router.attach("/verifyplayers",VerifyPlayersResource.class);
 		return router;
 	}
 

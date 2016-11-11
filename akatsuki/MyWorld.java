@@ -14,11 +14,6 @@ import org.restlet.data.* ;
  */
 public class MyWorld extends World
 {
-
-    /**
-     * Constructor for objects of class MyWorld.
-     */
-    
     //Screen Definitions
     Screens homeScreen;     
     Screens newGameScreen;
@@ -103,7 +98,9 @@ public class MyWorld extends World
             Representation result_string = client.post(new JsonRepresentation(newGame), MediaType.APPLICATION_JSON);
             JSONObject json = new JSONObject( result_string.getText() ) ;
             this.map = (int) json.get("map") ;
-            System.out.println(this.map);
+            this.city = (int) json.get("city");
+            this.cipher = (int) json.get("cipher");
+            this.enemy = (int) json.get("enemy");
             
             
         }

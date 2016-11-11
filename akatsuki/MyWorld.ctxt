@@ -11,4 +11,6 @@ comment4.params=
 comment4.target=void\ initializeRandomUitility()
 comment5.params=
 comment5.target=void\ initializeMapScreen()
-numComments=6
+comment6.params=
+comment6.target=void\ make_newgame_request()
+numComments=7

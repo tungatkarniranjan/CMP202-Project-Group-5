@@ -1,11 +1,11 @@
 #BlueJ class context
 comment0.target=RandomUtitility
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ RandomUtitility\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Write\ a\ description\ of\ class\ RandomUtitility\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
 comment1.params=
 comment1.target=RandomUtitility()
 comment2.params=
 comment2.target=void\ act()
 comment3.params=
 comment3.target=MapScreen\ getMapScreen()
-comment3.text=public\ void\ initializeMapScreenStore()\r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ for(MapScreen\ map\ \:\ getWorld().getObjects(MapScreen.class))\r\n\ \ \ \ \ \ \ \ {\r\n\ \ \ \ \ \ \ \ \ \ \ MapScreenRegister.add(map);\r\n\ \ \ \ \ \ \ \ }\r\n}
+comment3.text=public\ void\ initializeMapScreenStore()\n\ \ \ \ {\n\ \ \ \ \ \ \ \ for(MapScreen\ map\ \:\ getWorld().getObjects(MapScreen.class))\n\ \ \ \ \ \ \ \ {\n\ \ \ \ \ \ \ \ \ \ \ MapScreenRegister.add(map);\n\ \ \ \ \ \ \ \ }\n}
 numComments=4

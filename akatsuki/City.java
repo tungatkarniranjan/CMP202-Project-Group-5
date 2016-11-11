@@ -22,7 +22,7 @@ public class City extends Actor
     {
         setLocation(Xposition ,Yposition);
         setImage(img);
-        System.out.println(Xposition );
+        //System.out.println(Xposition );
         this.cityName = cityName;
         
     

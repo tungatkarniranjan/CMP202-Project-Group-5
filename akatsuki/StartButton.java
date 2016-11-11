@@ -15,12 +15,6 @@ import org.restlet.data.* ;
  */
 public class StartButton extends Button
 {
-    /**
-     * Act - do whatever the EnterButton wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    private String URL = "http://10.0.0.173:8080/gumball" ;
-    ClientResource client = new ClientResource( URL );    
     public void act() 
     {
         // Add your action code here.
@@ -41,26 +35,28 @@ public class StartButton extends Button
     public void displayMapScreen()
     {
        MyWorld world = (MyWorld)getWorld();
+       makeStartGameRequest();
        world.initializeMapScreen();
-       turnCrank();
-       
     }
     
-    public void turnCrank() {
-    
-    JSONObject start_game = new JSONObject();
-    start_game.put("action", "start_game");
-    try
+    public void makeStartGameRequest() 
     {
-            Representation result_string = client.post(new JsonRepresentation(start_game), MediaType.APPLICATION_JSON);
+        String startGameURL = "http://10.0.0.173:8080/startgame" ;
+        ClientResource client = getClient(startGameURL);
+        try
+        {
+            Representation result_string = client.get();
             System.out.println(result_string.getText());    
-    
-    }
-    catch(Exception error)
-    {
+        }
+        catch(Exception error)
+        {
             System.out.println(error);
+        }
     }
     
-
-  }
+    public ClientResource getClient(String URL)
+    {
+        ClientResource client = new ClientResource(URL);
+        return client;
+    }
 }

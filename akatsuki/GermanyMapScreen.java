@@ -31,6 +31,8 @@ public class GermanyMapScreen extends MapScreen
             City city = new City(cities.get(counter), cityImg, 100, 100);
             CityStore.add(city);
         }
+        
+        System.out.println("Germany");
     }
     
     public void act() 

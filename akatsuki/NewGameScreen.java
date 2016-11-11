@@ -14,31 +14,51 @@ import org.restlet.data.* ;
  */
 public class NewGameScreen extends Screens
 {
-    /**
-     * Act - do whatever the NewGameScreen wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */    
     World world;
     Button startButton;
+    MessageActor message; 
 
-    private String URL = "http://10.0.0.173:8080/verifyplayers" ;
-    ClientResource client = new ClientResource( URL );     
+    private static final int xPosition = 700;
+    private static final int yPosition = 90; 
     
+    int playersConnected = 0;
+    int gameStarted = 0;
+   
     NewGameScreen(){
         startButton = new StartButton();
+        message = new MessageActor();
     }
     
     public void act() 
     {
-        if(checkPlayersConnected())
+        if(playersConnected == 0)
         {
+            if(checkPlayersConnected())
+            {
+                playersConnected = 1;
+            }
             World world = getWorld();
-            world.showText("Player Connected", 400, 400);
+            String msg = "Waiting for another player to join!";            
+            showMessage(xPosition,yPosition,msg,world);
         }
-        else
+        else if(playersConnected == 1)
         {
             World world = getWorld();
-            world.showText("Waiting for another player to join!", 700, 400);            
+            String msg = "Player Connected";
+            showMessage(xPosition, yPosition, msg, world);
+            if(gameStarted == 0)
+            {
+                if(checkIfGameStarted())
+                {
+                    gameStarted = 1;
+                }
+            }
+            else if(gameStarted == 1)
+            {
+                gameStarted = 2;
+                MyWorld myworld = (MyWorld)getWorld();
+                myworld.initializeMapScreen(); 
+            }
         }
     }    
     
@@ -47,22 +67,54 @@ public class NewGameScreen extends Screens
         world.addObject(startButton,1300 , 650);
     }
     
+    public void showMessage(int x, int y, String msg, World world)
+    {
+        message.showMessage(x,y,msg,world);
+    }
+    
     public boolean checkPlayersConnected()
     {
         Representation result_string = null;
         boolean player2connected = false;
+        String verifyPlayersConnectedURL = "http://10.0.0.173:8080/verifyplayers" ;
+        ClientResource client = getClient(verifyPlayersConnectedURL);
+        
         try
         {
             result_string = client.get();
             JSONObject json = new JSONObject( result_string.getText() ) ;
             player2connected = (boolean)json.get("connected");    
-            System.out.println(player2connected);
         }
         catch(Exception error)
         {
             System.out.println(error);
         }
         return player2connected;
+    }
+    
+    public boolean checkIfGameStarted()
+    {
+        Representation result_string = null;
+        boolean gamestarted = false;
+        String verifyGameStartedURL = "http://10.0.0.173:8080/verifygamestarted" ;
+        ClientResource client = getClient(verifyGameStartedURL);        
+        try
+        {
+            result_string = client.get();
+            JSONObject json = new JSONObject( result_string.getText() ) ;
+            gamestarted = (boolean)json.get("started");    
+        }
+        catch(Exception error)
+        {
+            System.out.println(error);
+        }
+        return gamestarted;    
+    }
+    
+    public ClientResource getClient(String URL)
+    {
+        ClientResource client = new ClientResource(URL);
+        return client;
     }
     
 }

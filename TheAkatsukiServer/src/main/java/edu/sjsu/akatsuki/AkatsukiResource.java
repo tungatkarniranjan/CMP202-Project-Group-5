@@ -5,10 +5,6 @@ import org.restlet.resource.Post;
 import org.restlet.resource.ServerResource;
 import java.io.IOException;
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 public class AkatsukiResource extends ServerResource {
 
  @Post

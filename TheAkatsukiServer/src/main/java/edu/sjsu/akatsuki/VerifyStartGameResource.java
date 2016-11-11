@@ -6,20 +6,19 @@ import org.restlet.representation.Representation;
 import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
 
+import edu.sjsu.manager.GameStart;
 import edu.sjsu.manager.Players;
 
-public class VerifyPlayersResource extends ServerResource {
+public class VerifyStartGameResource extends ServerResource {
 
 	@Get
-	public Representation verifyPlayersConnection() {
+	public Representation verifyGameStarted() {
 
 		JSONObject jsonResponse = new JSONObject();
-		if (Players.getNoPlayers() == 2) {
-			jsonResponse.put("connected", true);
-		} else {
-			jsonResponse.put("connected", false);
-		}
+//		jsonResponse.put("started", false);
+//		if(Players.getNoPlayers() == 2)
+			jsonResponse.put("started", GameStart.IsGameStarted());
+
 		return new JsonRepresentation(jsonResponse);
 	}
-
 }

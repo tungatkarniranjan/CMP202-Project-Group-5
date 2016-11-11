@@ -1,17 +1,17 @@
 
 package edu.sjsu.akatsuki;
 
-import org.restlet.representation.*;
-import org.restlet.resource.Post;
-import org.restlet.resource.ServerResource;
 import java.io.IOException;
 
-import edu.sjsu.manager.Players;
-import edu.sjsu.utility.*;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.json.*;
-import org.restlet.ext.json.*;
+import org.restlet.ext.json.JsonRepresentation;
+import org.restlet.representation.Representation;
+import org.restlet.resource.Post;
+import org.restlet.resource.ServerResource;
+
+import edu.sjsu.manager.Players;
+import edu.sjsu.utility.RandomUtility;
 
 public class NewGameResource extends ServerResource {
 

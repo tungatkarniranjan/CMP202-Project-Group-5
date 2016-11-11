@@ -11,6 +11,5 @@ public class Players {
 	public static void addPlayers() {
 		Players.noPlayers++;
 	}
-	
-	
+
 }

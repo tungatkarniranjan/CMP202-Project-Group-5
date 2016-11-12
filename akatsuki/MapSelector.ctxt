@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=MapSelector
+comment1.params=
+comment1.target=MapSelector()
+comment2.params=index
+comment2.target=MapScreen\ produceMap(int)
+numComments=3

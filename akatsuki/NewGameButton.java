@@ -20,7 +20,7 @@ public class NewGameButton extends Button
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     
-    private String URL = "http://10.0.0.173:8080/newgame" ;
+    private String URL = "http://localhost:8080/newgame" ;
     ClientResource client = new ClientResource( URL ); 
     
     public void act() 

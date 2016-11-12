@@ -76,7 +76,7 @@ public class NewGameScreen extends Screens
     {
         Representation result_string = null;
         boolean player2connected = false;
-        String verifyPlayersConnectedURL = "http://10.0.0.173:8080/verifyplayers" ;
+        String verifyPlayersConnectedURL = "http://localhost:8080/verifyplayers" ;
         ClientResource client = getClient(verifyPlayersConnectedURL);
         
         try
@@ -96,7 +96,7 @@ public class NewGameScreen extends Screens
     {
         Representation result_string = null;
         boolean gamestarted = false;
-        String verifyGameStartedURL = "http://10.0.0.173:8080/verifygamestarted" ;
+        String verifyGameStartedURL = "http://localhost:8080/verifygamestarted" ;
         ClientResource client = getClient(verifyGameStartedURL);        
         try
         {

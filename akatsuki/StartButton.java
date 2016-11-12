@@ -23,13 +23,17 @@ public class StartButton extends Button
         }
     }    
     
-    private void removeCustomObjects(Class cls){
+    private void removeCustomObjects(Class cls)
+    {
+        
+        if(makeStartGameRequest())
+        {
             World world = getWorld();
             Actor actor = getOneObjectAtOffset(0, 0, cls);
             this.displayMapScreen();
             world.removeObject(actor); 
             world.removeObject(this);
-            
+        }
     }
     
     public void displayMapScreen()
@@ -39,19 +43,22 @@ public class StartButton extends Button
        world.initializeMapScreen();
     }
     
-    public void makeStartGameRequest() 
+    public boolean makeStartGameRequest() 
     {
-        String startGameURL = "http://10.0.0.173:8080/startgame" ;
+        String startGameURL = "http://localhost:8080/startgame" ;
         ClientResource client = getClient(startGameURL);
+        boolean gamestarted = false;
         try
         {
             Representation result_string = client.get();
-            System.out.println(result_string.getText());    
+            JSONObject json = new JSONObject( result_string.getText() ) ;
+            gamestarted = (boolean)json.get("started"); 
         }
         catch(Exception error)
         {
             System.out.println(error);
         }
+        return gamestarted;
     }
     
     public ClientResource getClient(String URL)

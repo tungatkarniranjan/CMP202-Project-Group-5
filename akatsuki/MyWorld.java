@@ -20,7 +20,7 @@ public class MyWorld extends World
     RandomUtitility randomUtility;
     
     //REST definitions
-    private String URL = "http://10.0.0.173:8080/newgame" ;
+    private String URL = "http://localhost:8080/newgame" ;
     ClientResource client = new ClientResource( URL );   
     
     //Game Environment Definitions
@@ -108,17 +108,11 @@ public class MyWorld extends World
             this.map = (int) json.get("map") ;
             this.city = (int) json.get("city");
             this.cipher = (int) json.get("cipher");
-            this.enemy = (int) json.get("enemy");
-            
-            
+            this.enemy = (int) json.get("enemy");            
         }
         catch(Exception error)
         {
             System.out.println("Something went wrong : "+error);
         }
     }
-    
-    
-    
-    
 }

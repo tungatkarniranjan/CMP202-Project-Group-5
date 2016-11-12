@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=CipherSelector
+comment1.params=
+comment1.target=CipherSelector()
+comment2.params=index
+comment2.target=cipher\ produceCipher(int)
+numComments=3

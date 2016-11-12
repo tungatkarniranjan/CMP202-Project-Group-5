@@ -19,8 +19,6 @@ public class MapSelector
     public MapScreen produceMap(int index){
         String mapName = maps.get(index);
         MapScreen mapScreen;
-        System.out.println("I am selecting the map from the selector");
-        System.out.println(index);
         if(mapName == "France"){
             mapScreen = new FranceMapScreen();
         }else if(mapName == "Germany"){

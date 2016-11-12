@@ -19,4 +19,7 @@ public class MapScreen extends Screens
     public  void plotCities(){
 
     }
+    
+    public void setCipher(cipher cipherObject){
+    }
 }

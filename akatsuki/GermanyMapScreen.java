@@ -9,7 +9,7 @@ import java.util.*;
 public class GermanyMapScreen extends MapScreen
 {
     /**
-     * Act - do whatever the FranceMapScreen wants to do. This method is called whenever
+     * Act - do whatever the GermanyMapScreen wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     ArrayList <City>CityStore = new ArrayList<City>();
@@ -26,7 +26,7 @@ public class GermanyMapScreen extends MapScreen
             
         int counter = 0;
         
-        for(counter =0; counter < cities.size(); counter++){   
+        for(counter = 0; counter < cities.size(); counter++){   
             GreenfootImage cityImg = new GreenfootImage("./images/"+cities.get(counter) + ".png");
             City city = new City(cities.get(counter), cityImg, 100, 100);
             CityStore.add(city);

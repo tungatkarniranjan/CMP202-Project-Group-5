@@ -10,8 +10,14 @@ public class CipherActorSix extends CipherActor implements cipher
      * Constructor for objects of class CipherSix
      */
     int setKey = 4, g = 5, p = 23;
+    String encryptedString;
+    
     public CipherActorSix()
     {
+        //implement logic
+//        if(){
+  //          
+    //    }
         keyExchange();
     }
     
@@ -37,7 +43,6 @@ public class CipherActorSix extends CipherActor implements cipher
     //encrypt the string provided in stringToencrypt
     public String encrypt(String stringToencrypt) {
         this.givenString = stringToencrypt;
-        String encryptedString = new String();
         String givenStringLowerCase = givenString.toLowerCase();
         for(int i=0; i<givenStringLowerCase.length(); i++) {
             char ch = givenStringLowerCase.charAt(i);
@@ -58,7 +63,9 @@ public class CipherActorSix extends CipherActor implements cipher
     }
     //check if the answer submitted by the player is correct
     public boolean checkAnswerValidity(String answer) {
-        return false;
+        if(this.givenString == encryptedString)
+            return false;
+        return true;    
     }
     
     public double[] executeFirst(int userKey, int setKey) {
@@ -73,5 +80,15 @@ public class CipherActorSix extends CipherActor implements cipher
         double csSecondAnswer = (Math.pow(userAnswer, setKey)) % 23;
         double [] returnArray = {userSecondAnswer, csSecondAnswer};
         return returnArray;
+    }
+    
+    public String giveHint(int hintNumber){
+        if(hintNumber == 1){
+            return "This is hint one";
+        }else if(hintNumber == 2){
+            return "This is hint two";
+        }else if(hintNumber == 3){
+            return "This is hint three";
+        }
     }
 }

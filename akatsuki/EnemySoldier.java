@@ -28,22 +28,24 @@ public class EnemySoldier extends Enemy
         }
     }
     
-    public void turnRight(){
-    
-    //turn right     
+    public void turnRight(){    
+        //turn right    
+        move(-4);
     };
     
     public void turnLeft(){
-    //turn left
+        //turn left
+        move(4);
     };
     
     public void move(){
         //move forward
+        move(-4);
     };
     
     public void moveRandom(){
-    
-    //moverandom
+        //moverandom
+        move(4);
     };
     
     
@@ -57,18 +59,17 @@ public class EnemySoldier extends Enemy
     
     public void attack(int X, int Y)
     {
-             System.out.println(state);  
-              moveActor();
-              turnTowards(X,Y);
-              setLocation(X-220,Y);
-              setRotation(0);
-              Actor ammunition;
-              if(this.count%70==0){
-                getWorld().addObject(new BulletAmmunition(this,X,Y), getX(), getY());
-
+        System.out.println(state);  
+        moveActor();
+        turnTowards(X,Y);
+        setLocation(X-220,Y);
+        setRotation(0);
+        Actor ammunition;
+        if(this.count%70==0){
+            getWorld().addObject(new BulletAmmunition(this,X,Y), getX(), getY());
         }
         count++;
-              System.out.println(state);
+        System.out.println(state);
     }
     
     public void foundCity()

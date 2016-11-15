@@ -58,4 +58,14 @@ public class GermanyMapScreen extends MapScreen
         //world1.addObject(city1,300, 300);
     }
     
+    public void setCipher(cipher cipherObject, int targetCity){
+        String city = cities.get(targetCity);
+        System.out.println(city);
+        String encryptedCity = cipherObject.encrypt(city);
+        System.out.println(encryptedCity);
+    
+    }
+    
+    
+    
 }

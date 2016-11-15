@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=BulletAmmunition
-comment0.text=\n\ \n
-comment1.params=enemy\ attackXpos\ attackYpos
-comment1.target=BulletAmmunition(Enemy,\ int,\ int)
-comment1.text=\n\ Act\ -\ do\ whatever\ the\ Ammunition\ wants\ to\ do.\ This\ method\ is\ called\ whenever\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\n
-comment2.params=
-comment2.target=void\ act()
-numComments=3

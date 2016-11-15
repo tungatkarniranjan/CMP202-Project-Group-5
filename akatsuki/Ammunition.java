@@ -5,7 +5,7 @@ import java.awt.Color;
 /**
  * 
  */
-public class Ammunition extends Enemy
+public class Ammunition extends Actor
 {
     private Enemy enemy;
     private int attackXpos ;

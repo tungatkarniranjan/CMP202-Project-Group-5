@@ -45,8 +45,9 @@ public class StartButton extends Button
     
     public boolean makeStartGameRequest() 
     {
-        String startGameURL = "http://localhost:8080/startgame" ;
-        ClientResource client = getClient(startGameURL);
+        //String startGameURL = "http://localhost:8080/startgame" ;
+        //ClientResource client = getClient(startGameURL);
+        ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/startgame"));
         boolean gamestarted = false;
         try
         {
@@ -59,11 +60,5 @@ public class StartButton extends Button
             System.out.println(error);
         }
         return gamestarted;
-    }
-    
-    public ClientResource getClient(String URL)
-    {
-        ClientResource client = new ClientResource(URL);
-        return client;
     }
 }

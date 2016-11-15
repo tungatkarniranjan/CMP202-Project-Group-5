@@ -9,6 +9,4 @@ comment3.params=
 comment3.target=void\ displayMapScreen()
 comment4.params=
 comment4.target=boolean\ makeStartGameRequest()
-comment5.params=URL
-comment5.target=org.restlet.resource.ClientResource\ getClient(java.lang.String)
-numComments=6
+numComments=5

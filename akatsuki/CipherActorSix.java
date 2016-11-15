@@ -90,5 +90,6 @@ public class CipherActorSix extends CipherActor implements cipher
         }else if(hintNumber == 3){
             return "This is hint three";
         }
+        return "";
     }
 }

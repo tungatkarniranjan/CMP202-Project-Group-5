@@ -9,9 +9,7 @@ import org.restlet.representation.* ;
 import org.restlet.ext.json.* ;
 import org.restlet.data.* ;
 
-/**
- * 
- */
+
 public class MyWorld extends World
 {
     //Screen Definitions
@@ -19,17 +17,13 @@ public class MyWorld extends World
     Screens newGameScreen;
     RandomUtitility randomUtility;
     
-    //REST definitions
-    private String URL = "http://localhost:8080/newgame" ;
-    ClientResource client = new ClientResource( URL );   
-    
     //Game Environment Definitions
     int map = -9999;
     int cipher = -9999;
     int city = -9999;
     int enemy = -9999;
     
-    //ArrayList <MapScreen>MapScreenStore = new ArrayList<MapScreen>();
+
     ArrayList <CipherActor>CipherStore = new ArrayList<CipherActor>();
     ArrayList <Enemy>EnemyStore = new ArrayList<Enemy>();    
     private static final int CITIES = 5;
@@ -40,10 +34,6 @@ public class MyWorld extends World
     public MyWorld()
     {
         super(1600, 800, 1);
-        
-        //Add mapscreens to the mapscreen store.
-        //MapScreenStore.add(new FranceMapScreen());
-        //MapScreenStore.add(new GermanyMapScreen());
         
         //Add cipher to the cipher store
         CipherStore.add(new CipherActorOne());
@@ -79,20 +69,20 @@ public class MyWorld extends World
       // randomUtility.initializeMapScreenRegister();
     }
     
-    public void initializeMapScreen(){
+    public void initializeMapScreen()
+    {
         MapSelector mapSelector = new MapSelector();
         MapScreen randomMap = mapSelector.produceMap(this.map);
         addObject(randomMap, 800, 400);
         randomMap.plotCities();
         
         CipherSelector cipherSelector = new CipherSelector();
-        cipher randomCipher = cipherSelector.produceCipher(this.cipher);
-        
-        
+        cipher randomCipher = cipherSelector.produceCipher(this.cipher); 
     }
     
     public void make_newgame_request()
     {
+        ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/newgame"));   
         try
         {
             //Create a json request object containing total maps, total cities, total ciphers, total enemies

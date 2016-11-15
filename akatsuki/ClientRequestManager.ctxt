@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=ClientRequestManager
+comment0.text=\n\ Write\ a\ description\ of\ class\ ClientRequestManager\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=URI
+comment1.target=java.lang.String\ getRequestURL(java.lang.String)
+comment2.params=requestURL
+comment2.target=org.restlet.resource.ClientResource\ getClient(java.lang.String)
+numComments=3

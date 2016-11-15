@@ -16,4 +16,6 @@ comment7.params=userKey\ setKey
 comment7.target=double[]\ executeFirst(int,\ int)
 comment8.params=userAnswer\ csAnswer\ userKey
 comment8.target=double[]\ executeSecond(double,\ double,\ int)
-numComments=9
+comment9.params=hintNumber
+comment9.target=java.lang.String\ giveHint(int)
+numComments=10

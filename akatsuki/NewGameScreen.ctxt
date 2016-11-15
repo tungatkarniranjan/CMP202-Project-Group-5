@@ -13,6 +13,4 @@ comment5.params=
 comment5.target=boolean\ checkPlayersConnected()
 comment6.params=
 comment6.target=boolean\ checkIfGameStarted()
-comment7.params=URL
-comment7.target=org.restlet.resource.ClientResource\ getClient(java.lang.String)
-numComments=8
+numComments=7

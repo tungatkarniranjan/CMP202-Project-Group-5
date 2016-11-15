@@ -76,9 +76,7 @@ public class NewGameScreen extends Screens
     {
         Representation result_string = null;
         boolean player2connected = false;
-        String verifyPlayersConnectedURL = "http://localhost:8080/verifyplayers" ;
-        ClientResource client = getClient(verifyPlayersConnectedURL);
-        
+        ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/verifyplayers"));
         try
         {
             result_string = client.get();
@@ -96,8 +94,7 @@ public class NewGameScreen extends Screens
     {
         Representation result_string = null;
         boolean gamestarted = false;
-        String verifyGameStartedURL = "http://localhost:8080/verifygamestarted" ;
-        ClientResource client = getClient(verifyGameStartedURL);        
+        ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/verifygamestarted"));
         try
         {
             result_string = client.get();
@@ -109,12 +106,5 @@ public class NewGameScreen extends Screens
             System.out.println(error);
         }
         return gamestarted;    
-    }
-    
-    public ClientResource getClient(String URL)
-    {
-        ClientResource client = new ClientResource(URL);
-        return client;
-    }
-    
+    }    
 }

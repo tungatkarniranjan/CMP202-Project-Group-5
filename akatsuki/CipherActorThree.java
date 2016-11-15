@@ -12,14 +12,14 @@ import java.awt.Color;
 public class CipherActorThree extends CipherActor implements cipher {
 
 	char city[];
-	String key;
-    String keySet;
-    
-	public cipherActorThree() {
+	String key = "key";
+    String keySet = "_abcdefghijklmnopqrstuvwxyz";	
+
+	/*public cipherActorThree() {
 		super();
 		key = "key";
 		keySet = "_abcdefghijklmnopqrstuvwxyz";
-	}
+	}*/
 	
 	@Override
 	public String encrypt(String stringToencrypt) {

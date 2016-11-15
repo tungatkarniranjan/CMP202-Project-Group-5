@@ -17,6 +17,7 @@ public class FranceMapScreen extends MapScreen
     World world;
     
     EnemyTank enemyTank;
+    CipherHintShow cipherShow;
     
     FranceMapScreen(){
         world = getWorld();
@@ -24,6 +25,7 @@ public class FranceMapScreen extends MapScreen
         cities.add("Munich");
         cities.add("Frankfurt");
             
+        cipherShow = new CipherHintShow();
         int counter = 0;
         
         for(counter =0; counter < cities.size(); counter++){   
@@ -57,5 +59,15 @@ public class FranceMapScreen extends MapScreen
         //World world1 = getWorld();
         //world1.addObject(city1,300, 300);
     }
+    
+        public void setCipher(cipher cipherObject, int targetCity){
+        String city = cities.get(targetCity);
+        System.out.println(city);
+        String encryptedCity = cipherObject.encrypt(city);
+        System.out.println(encryptedCity);
+        cipherShow.showCipherText(encryptedCity, world);
+    
+    }
+    
     
 }

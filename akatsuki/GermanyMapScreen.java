@@ -17,9 +17,11 @@ public class GermanyMapScreen extends MapScreen
     World world;
     
     EnemyTank enemyTank;
+    CipherHintShow cipherShow;
     
     GermanyMapScreen(){
         world = getWorld();
+        cipherShow = new CipherHintShow();
         cities.add("Paris");
         cities.add("Munich");
         cities.add("Frankfurt");
@@ -63,6 +65,7 @@ public class GermanyMapScreen extends MapScreen
         System.out.println(city);
         String encryptedCity = cipherObject.encrypt(city);
         System.out.println(encryptedCity);
+        cipherShow.showCipherText(encryptedCity, world);
     
     }
     

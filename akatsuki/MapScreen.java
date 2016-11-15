@@ -22,4 +22,5 @@ public class MapScreen extends Screens
     
     public void setCipher(cipher cipherObject, int targetCity){
     }
+    
 }

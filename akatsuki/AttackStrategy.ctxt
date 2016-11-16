@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=AttackStrategy
+comment0.text=\n\ Write\ a\ description\ of\ class\ AttackStrategy\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=X\ Y
+comment1.target=AttackStrategy(int,\ int)
+comment2.params=enemy
+comment2.target=void\ move(Enemy)
+numComments=3

@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=EnemySelector
+comment0.text=\n\ Write\ a\ description\ of\ class\ EnemySelector\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=EnemySelector()
+comment2.params=enemyId
+comment2.target=Enemy\ produceEnemies(int)
+numComments=3

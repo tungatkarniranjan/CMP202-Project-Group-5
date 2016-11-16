@@ -19,7 +19,7 @@ public class NewGameScreen extends Screens
     MessageActor message; 
 
     private static final int xPosition = 700;
-    private static final int yPosition = 90; 
+    private static final int yPosition = 80; 
     
     int playersConnected = 0;
     int gameStarted = 0;
@@ -57,6 +57,7 @@ public class NewGameScreen extends Screens
             {
                 gameStarted = 2;
                 MyWorld myworld = (MyWorld)getWorld();
+                myworld.removeObjects(myworld.getObjects(MessageActor.class));                
                 myworld.initializeMapScreen(); 
             }
         }
@@ -69,7 +70,7 @@ public class NewGameScreen extends Screens
     
     public void showMessage(int x, int y, String msg, World world)
     {
-        message.showMessage(x,y,msg,world);
+        message.showMessage(msg, world, x, y);
     }
     
     public boolean checkPlayersConnected()

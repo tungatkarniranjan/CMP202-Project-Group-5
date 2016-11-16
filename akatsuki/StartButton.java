@@ -33,6 +33,7 @@ public class StartButton extends Button
             this.displayMapScreen();
             world.removeObject(actor); 
             world.removeObject(this);
+
         }
     }
     
@@ -41,12 +42,11 @@ public class StartButton extends Button
        MyWorld world = (MyWorld)getWorld();
        makeStartGameRequest();
        world.initializeMapScreen();
+       world.removeObjects(world.getObjects(MessageActor.class));
     }
     
     public boolean makeStartGameRequest() 
     {
-        //String startGameURL = "http://localhost:8080/startgame" ;
-        //ClientResource client = getClient(startGameURL);
         ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/startgame"));
         boolean gamestarted = false;
         try

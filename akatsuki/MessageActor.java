@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Font;
+import java.awt.Color;
 
 /**
  * Write a description of class MessageActor here.
@@ -11,23 +12,30 @@ import java.awt.Font;
 public class MessageActor extends Actor
 {
 
-    //GreenfootImage waiting = new GreenfootImage();
-    //GreenfootImage connected = new GreenfootImage();
+    private static GreenfootImage img;
     
     public void act() 
     {
         // Add your action code here.
     }  
     
-    public void showMessage(int x, int y, String msg, World world)
+    public void initImage(String text)
     {
-        world.showText(null,x,y);
-        world.showText(msg,x,y);
+        GreenfootImage textImage = new GreenfootImage(text, 30, Color.black, new Color(0, 0, 0, 0));
+        img = new GreenfootImage(textImage.getWidth()+20, textImage.getHeight()+10);
+        img.drawRect(0, 0, img.getWidth()-1, img.getHeight()-1);
+        img.drawImage(textImage, (img.getWidth()-textImage.getWidth())/2, (img.getHeight()-textImage.getHeight())/2);
     }
     
-    public void hideMessage()
+    public void showMessage(String textMsg, World world, int x, int y)
     {
-        
+        initImage(textMsg);
+        setImage(img);
+        world.addObject(this, x, y);
     }
-
+    
+    public void hideMessage(World world)
+    {
+        world.removeObjects(world.getObjects(MessageActor.class));
+    }
 }

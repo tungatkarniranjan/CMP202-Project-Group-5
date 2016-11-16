@@ -14,6 +14,7 @@ public class GermanyMapScreen extends MapScreen
      */
     ArrayList <City>CityStore = new ArrayList<City>();
     ArrayList <String>cities = new ArrayList<String>();
+    ArrayList <Enemy>enemies = new ArrayList<>();
     World world;
     
     EnemyTank enemyTank;
@@ -70,6 +71,18 @@ public class GermanyMapScreen extends MapScreen
     
     }
     
-    
+    public void setEnemy(int enemyId){
+        int counter = 0;
+        int x = 400;
+        int y = 500;
+        EnemySelector enemySelector = new EnemySelector();
+        for(counter = 0; counter < ENEMYCOUNT; counter ++){
+            Enemy enemy = enemySelector.produceEnemies(enemyId);
+            enemies.add(enemy);
+            world.addObject(enemy, x, y);
+            x += 100;
+            y += 100;
+        }
+    }
     
 }

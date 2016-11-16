@@ -80,8 +80,10 @@ public class MyWorld extends World
 
         randomMap.plotCities();
         randomMap.setCipher(randomCipher, this.city);
+        randomMap.setEnemy(this.enemy);
         
         addObject(new Timer(60),115,45);
+
     }
     public void make_newgame_request()
     {

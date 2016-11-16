@@ -14,11 +14,12 @@ public class FranceMapScreen extends MapScreen
      */
     ArrayList <City>CityStore = new ArrayList<City>();
     ArrayList <String>cities = new ArrayList<String>();
+    ArrayList <Enemy>enemies = new ArrayList<>();
     World world;
     
     EnemyTank enemyTank;
     CipherHintShow cipherShow;
-    
+
     FranceMapScreen(){
         world = getWorld();
         cities.add("Paris");
@@ -53,14 +54,10 @@ public class FranceMapScreen extends MapScreen
             y = y + 150;
         }
         
-        world.addObject(enemyTank, 800, 400);
-       
-        //City city1 = new City("Paris",null, 100, 100 );
-        //World world1 = getWorld();
-        //world1.addObject(city1,300, 300);
+        //world.addObject(enemyTank, 800, 400);
     }
     
-        public void setCipher(cipher cipherObject, int targetCity){
+    public void setCipher(cipher cipherObject, int targetCity){
         String city = cities.get(targetCity);
         System.out.println(city);
         String encryptedCity = cipherObject.encrypt(city);
@@ -69,5 +66,18 @@ public class FranceMapScreen extends MapScreen
     
     }
     
-    
+    public void setEnemy(int enemyId){
+        int counter = 0;
+        int x = 400;
+        int y = 500;
+        EnemySelector enemySelector = new EnemySelector();
+        for(counter = 0; counter < ENEMYCOUNT; counter ++){
+            Enemy enemy = enemySelector.produceEnemies(enemyId);
+            enemies.add(enemy);
+            world.addObject(enemy, x, y);
+            x += 100;
+            y += 100;
+        }
+    }
+
 }

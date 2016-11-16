@@ -9,4 +9,6 @@ comment3.params=
 comment3.target=void\ plotCities()
 comment4.params=cipherObject\ targetCity
 comment4.target=void\ setCipher(cipher,\ int)
-numComments=5
+comment5.params=enemyId
+comment5.target=void\ setEnemy(int)
+numComments=6

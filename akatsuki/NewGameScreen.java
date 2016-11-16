@@ -57,7 +57,7 @@ public class NewGameScreen extends Screens
             {
                 gameStarted = 2;
                 MyWorld myworld = (MyWorld)getWorld();
-                myworld.removeObjects(myworld.getObjects(MessageActor.class));                
+                //myworld.removeObjects(myworld.getObjects(MessageActor.class));                
                 myworld.initializeMapScreen(); 
             }
         }

@@ -42,7 +42,7 @@ public class StartButton extends Button
        MyWorld world = (MyWorld)getWorld();
        makeStartGameRequest();
        world.initializeMapScreen();
-       world.removeObjects(world.getObjects(MessageActor.class));
+       //world.removeObjects(world.getObjects(MessageActor.class));
     }
     
     public boolean makeStartGameRequest() 

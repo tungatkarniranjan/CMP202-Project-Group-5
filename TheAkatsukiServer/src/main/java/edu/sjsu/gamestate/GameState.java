@@ -7,4 +7,6 @@ public interface GameState {
 	public void startGame();
 	public boolean verifyPlayers();
 	public boolean verifyGameStarted();
+	public void endGame();
+	public boolean verifyGameOver();
 }

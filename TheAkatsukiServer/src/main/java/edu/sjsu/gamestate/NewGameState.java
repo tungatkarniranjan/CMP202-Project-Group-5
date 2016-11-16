@@ -32,4 +32,14 @@ public class NewGameState implements GameState {
 	{
 		return false;
 	}
+	
+	public void endGame()
+	{
+		System.out.println("The game has not started yet");
+	}
+	
+	public boolean verifyGameOver()
+	{
+		return false;
+	}
 }

@@ -25,6 +25,8 @@ public class AkatsukiServer extends Application {
 		router.attach("/verifyplayers", VerifyPlayersResource.class);
 		router.attach("/startgame", StartGameResource.class);
 		router.attach("/verifygamestarted", VerifyStartGameResource.class);
+		router.attach("/verifygameover", VerifyGameOverResource.class);
+		router.attach("/verifycitysaved", CheckResultResource.class);
 		return router;
 	}
 

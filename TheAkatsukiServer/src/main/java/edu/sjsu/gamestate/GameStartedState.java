@@ -32,4 +32,14 @@ public class GameStartedState implements GameState {
 	{
 		return true;
 	}
+	
+	public void endGame()
+	{
+		gameStateAssigner.setState(gameStateAssigner.getGameOverState());
+	}
+	
+	public boolean verifyGameOver()
+	{
+		return false;
+	}
 }

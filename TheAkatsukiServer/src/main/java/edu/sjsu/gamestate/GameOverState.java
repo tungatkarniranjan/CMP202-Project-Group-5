@@ -1,17 +1,17 @@
 package edu.sjsu.gamestate;
 
-public class NoPlayerState implements GameState{
+public class GameOverState implements GameState {
 
 	GameStateAssigner gameStateAssigner;
 	
-	public NoPlayerState(GameStateAssigner gameStateAssigner)
+	public GameOverState(GameStateAssigner gameStateAssigner)
 	{
 		this.gameStateAssigner = gameStateAssigner;
 	}
 	
 	public void connectPlayer1()
 	{
-		gameStateAssigner.setState(gameStateAssigner.getNewGameState());
+		System.out.println("I can't handle player 1");
 	}
 	
 	public void connectPlayer2()
@@ -21,7 +21,7 @@ public class NoPlayerState implements GameState{
 	
 	public void startGame()
 	{
-		System.out.println("Can't begin game without players");
+		System.out.println("Game is over ..");
 	}
 	
 	public boolean verifyPlayers()
@@ -36,12 +36,12 @@ public class NoPlayerState implements GameState{
 	
 	public void endGame()
 	{
-		System.out.println("The game has not started yet");
+		System.out.println("Game already over");
 	}
 	
 	public boolean verifyGameOver()
 	{
-		return false;
+		return true;
 	}
-
+	
 }

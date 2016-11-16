@@ -8,6 +8,7 @@ public class GameStateAssigner {
 	GameState newGameState;
 	GameState playersConnectedState;
 	GameState gameStartedState;
+	GameState gameOverState;
 	
 	public GameStateAssigner()
 	{
@@ -15,6 +16,7 @@ public class GameStateAssigner {
 		newGameState = new NewGameState(this);
 		playersConnectedState = new PlayersConnectedState(this);
 		gameStartedState = new GameStartedState(this);
+		gameOverState = new GameOverState(this);
 		
 		currentState = noPlayerState;
 	}
@@ -39,6 +41,11 @@ public class GameStateAssigner {
 		return gameStartedState;
 	}
 	
+	public GameState getGameOverState()
+	{
+		return gameOverState;
+	}
+	
 	public void connectPlayer1()
 	{
 		currentState.connectPlayer1();
@@ -54,6 +61,11 @@ public class GameStateAssigner {
 		currentState.startGame();
 	}
 	
+	public void endGame()
+	{
+		currentState.endGame();
+	}
+	
 	public boolean verifyPlayers()
 	{
 		return currentState.verifyPlayers();
@@ -62,6 +74,11 @@ public class GameStateAssigner {
 	public boolean verifyGameStarted()
 	{
 		return currentState.verifyGameStarted();
+	}
+	
+	public boolean verifyGameOver()
+	{
+		return currentState.verifyGameOver();
 	}
 	
 }

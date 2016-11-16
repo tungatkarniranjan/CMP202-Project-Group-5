@@ -7,10 +7,8 @@ import org.restlet.resource.Get;
 import org.restlet.resource.ServerResource;
 
 import edu.sjsu.gamestate.GameStateAssigner;
-import edu.sjsu.manager.GameStart;
-import edu.sjsu.manager.Players;
 
-public class VerifyStartGameResource extends ServerResource {
+public class VerifyGameOverResource extends ServerResource {
 
 	GameStateAssigner gameStateAssigner;
 	
@@ -20,7 +18,7 @@ public class VerifyStartGameResource extends ServerResource {
 		gameStateAssigner = GameEnvironment.getGameStateAssigner();
 		
 		JSONObject jsonResponse = new JSONObject();
-		jsonResponse.put("started", gameStateAssigner.verifyGameStarted());
+		jsonResponse.put("over", gameStateAssigner.verifyGameOver());
 		
 		return new JsonRepresentation(jsonResponse);
 	}

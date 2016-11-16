@@ -38,7 +38,7 @@ public class Timer extends Actor
  
     private void updateImage()
     {
-        String prefix = "T - ";
+        String prefix = "Time Left - ";
         if (count >= 0) {
             prefix = "T + ";
         }
@@ -61,7 +61,7 @@ public class Timer extends Actor
         while (s.length() > 2) 
             s = s.substring(1);
             
-        String text = prefix + h + "h : " + m + "m : " + s + "s";
+        String text = prefix +" - " + m + "m : " + s + "s";
         GreenfootImage textImage = new GreenfootImage(text, 20, Color.black, new Color(0, 0, 0, 0));
         GreenfootImage image = new GreenfootImage(textImage.getWidth()+20, textImage.getHeight()+10);
         image.drawRect(0, 0, image.getWidth()-1, image.getHeight()-1);

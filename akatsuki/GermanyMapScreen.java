@@ -21,11 +21,11 @@ public class GermanyMapScreen extends MapScreen
     
     GermanyMapScreen(){
         world = getWorld();
-        cipherShow = new CipherHintShow();
         cities.add("Paris");
         cities.add("Munich");
         cities.add("Frankfurt");
-            
+        
+        cipherShow = new CipherHintShow();
         int counter = 0;
         
         for(counter = 0; counter < cities.size(); counter++){   
@@ -53,14 +53,15 @@ public class GermanyMapScreen extends MapScreen
             y = y + 350;
         }
         
-        world.addObject(enemyTank, 100, 100);
-       
+        world.addObject(enemyTank, 800, 400);
+        
         //City city1 = new City("Paris",null, 100, 100 );
         //World world1 = getWorld();
         //world1.addObject(city1,300, 300);
     }
     
     public void setCipher(cipher cipherObject, int targetCity){
+        
         String city = cities.get(targetCity);
         System.out.println(city);
         String encryptedCity = cipherObject.encrypt(city);

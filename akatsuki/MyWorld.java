@@ -72,14 +72,14 @@ public class MyWorld extends World
     public void initializeMapScreen()
     {
         MapSelector mapSelector = new MapSelector();
-        MapScreen randomMap = mapSelector.produceMap(this.map);
+        MapScreen randomMap = mapSelector.produceMap(1);
         addObject(randomMap, 800, 500);
 
         CipherSelector cipherSelector = new CipherSelector();
         cipher randomCipher = cipherSelector.produceCipher(1); 
 
         randomMap.plotCities();
-        randomMap.setCipher(randomCipher, this.city);
+        randomMap.setCipher(randomCipher, 0);
         randomMap.setEnemy(this.enemy);
         
         addObject(new Timer(60),115,45);

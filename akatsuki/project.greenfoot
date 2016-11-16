@@ -1,4 +1,5 @@
 #Greenfoot properties
+<<<<<<< Updated upstream
 #Tue Nov 15 21:55:26 PST 2016
 target24.type=ClassTarget
 target16.name=HomeScreen
@@ -8,13 +9,23 @@ target11.typeParameters=
 dependency58.from=EnemySelector
 dependency33.from=MapSelector
 target10.width=110
+=======
+#Tue Nov 15 22:00:33 PST 2016
+target24.type=ClassTarget
+target16.name=cipher
+target43.name=MessageActor
+target11.typeParameters=
+dependency58.from=EnemySelector
+dependency33.from=MyWorld
+target10.width=150
+>>>>>>> Stashed changes
 target36.height=50
 dependency19.type=UsesDependency
 target43.showInterface=false
 target34.showInterface=false
-target42.y=1210
+target42.y=970
 dependency46.type=UsesDependency
-target42.x=180
+target42.x=10
 dependency21.type=UsesDependency
 class.NewGameButton.image=new_game.png
 target21.typeParameters=
@@ -22,8 +33,9 @@ target36.type=ClassTarget
 target17.showInterface=false
 target11.type=ClassTarget
 class.cipherFour.superclass=greenfoot.Actor
-dependency33.to=GermanyMapScreen
+dependency33.to=EnemyTank
 dependency18.from=GermanyMapScreen
+<<<<<<< Updated upstream
 target30.name=CipherActorTwo
 dependency45.from=GermanyMapScreen
 target17.typeParameters=
@@ -31,30 +43,57 @@ dependency20.from=GermanyMapScreen
 dependency27.to=CipherActorOne
 target6.name=Button
 target37.width=120
+=======
+target30.name=CipherActorFive
+dependency45.from=MyWorld
+target17.typeParameters=
+dependency20.from=GermanyMapScreen
+dependency27.to=City
+target6.name=Ammunition
+target37.width=140
+>>>>>>> Stashed changes
 target31.height=50
-target39.y=430
-target39.x=130
+target39.y=1270
+target39.x=10
 class.AmmunitionInterface.superclass=
 target31.showInterface=false
+<<<<<<< Updated upstream
 target31.y=70
 target31.x=70
+=======
+target31.y=430
+target31.x=130
+>>>>>>> Stashed changes
 dependency60.type=UsesDependency
 target14.showInterface=false
 class.MapSelector.superclass=
 class.EnemySelector.superclass=
+<<<<<<< Updated upstream
 target32.width=110
 mainWindow.width=1855
+=======
+target32.width=130
+mainWindow.width=1873
+>>>>>>> Stashed changes
 target8.showInterface=false
 target1.typeParameters=
 target1.type=ClassTarget
 dependency35.type=UsesDependency
+<<<<<<< Updated upstream
 target28.y=190
+=======
+target28.y=250
+>>>>>>> Stashed changes
 target15.typeParameters=
-target28.x=10
+target28.x=100
 class.CipherSelector.superclass=
 dependency22.to=City
 target25.type=ClassTarget
+<<<<<<< Updated upstream
 target17.name=cipher
+=======
+target17.name=MapScreen
+>>>>>>> Stashed changes
 target20.y=310
 target11.showInterface=false
 target20.x=10
@@ -62,31 +101,54 @@ target44.name=AttackButton
 dependency16.to=NewGameScreen
 dependency59.from=EnemySelector
 target25.typeParameters=
-dependency34.from=MyWorld
+dependency34.from=NewGameScreen
 dependency5.to=City
 target19.height=50
+<<<<<<< Updated upstream
 target4.y=730
 target23.width=130
 target4.x=140
 target5.showInterface=false
 class.CipherActorFive.superclass=CipherActor
 target18.width=90
+=======
+target4.y=370
+target23.width=130
+target4.x=200
+target5.showInterface=false
+class.CipherActorFive.superclass=CipherActor
+target18.width=140
+>>>>>>> Stashed changes
 dependency63.to=EnemySelector
 dependency47.type=UsesDependency
 dependency22.type=UsesDependency
 class.GermanyMapScreen.image=map_germany.png
+<<<<<<< Updated upstream
 target17.y=10
 target17.x=100
+=======
+target17.y=250
+target17.x=10
+>>>>>>> Stashed changes
 target37.type=ClassTarget
 target12.type=ClassTarget
-dependency57.to=Enemy
+dependency57.to=EnemyTank
 dependency19.from=FranceMapScreen
+<<<<<<< Updated upstream
 target31.name=CipherActorFive
 dependency46.from=GermanyMapScreen
 dependency21.from=EnemyTank
 target7.name=EnemyCommandBase
 target14.width=80
 target2.width=140
+=======
+target31.name=FranceMapScreen
+dependency46.from=MyWorld
+dependency21.from=EnemyTank
+target14.width=140
+target7.name=EnemyCommandBase
+target2.width=170
+>>>>>>> Stashed changes
 dependency11.to=Button
 target14.height=50
 target2.showInterface=false
@@ -95,36 +157,53 @@ target37.showInterface=false
 target28.showInterface=false
 readme.height=58
 target45.y=550
-class.Explosion.superclass=greenfoot.Actor
 target45.x=10
 dependency61.type=UsesDependency
+<<<<<<< Updated upstream
 package.numTargets=37
+=======
+package.numTargets=36
+>>>>>>> Stashed changes
 target5.typeParameters=
 target19.typeParameters=
-dependency52.to=Ammunition
+dependency52.to=CipherActorOne
 target45.width=120
 class.GermanyMapScreen.superclass=MapScreen
 target2.type=ClassTarget
 class.AttackButton.superclass=greenfoot.Actor
-dependency60.from=EnemySelector
+dependency60.from=FranceMapScreen
 dependency36.type=UsesDependency
-dependency46.to=cipher
+dependency46.to=ClientRequestManager
 target29.typeParameters=
 target25.showInterface=false
 target26.type=ClassTarget
 dependency1.type=UsesDependency
+<<<<<<< Updated upstream
 target18.name=MapScreen
 target34.y=970
+=======
+target18.name=CipherActorOne
+target34.y=850
+>>>>>>> Stashed changes
 class.NewGameButton.superclass=Button
-target34.x=10
+target34.x=160
 class.CipherTwo.superclass=
 target45.name=NewGameButton
+<<<<<<< Updated upstream
 target20.name=City
 target41.width=130
+=======
+target20.name=EnemyTank
+>>>>>>> Stashed changes
 target3.typeParameters=
-dependency35.from=CipherSelector
+dependency35.from=NewGameScreen
+target41.width=130
 target35.height=50
+<<<<<<< Updated upstream
 target36.width=110
+=======
+target36.width=120
+>>>>>>> Stashed changes
 target8.height=50
 target31.typeParameters=
 dependency48.type=UsesDependency
@@ -133,11 +212,12 @@ target22.showInterface=false
 target38.type=ClassTarget
 dependency50.type=UsesDependency
 target13.type=ClassTarget
-dependency41.to=Enemy
+dependency41.to=ClientRequestManager
 class.cipher.superclass=
 target27.typeParameters=
 world.lastInstantiated=MyWorld
 target40.type=ClassTarget
+<<<<<<< Updated upstream
 target23.y=1090
 target23.x=10
 target32.name=EnemySelector
@@ -150,120 +230,174 @@ target8.name=Ammunition
 target7.y=1210
 target27.width=120
 target7.x=10
+=======
+target23.y=490
+target23.x=160
+target32.name=EnemySelector
+dependency47.from=StartButton
+dependency22.from=EnemyTank
+dependency35.to=MyWorld
+target9.typeParameters=
+target27.height=50
+target8.name=CipherSelector
+target27.width=140
+target7.y=1150
+>>>>>>> Stashed changes
 target30.height=50
+target7.x=10
 target3.height=50
-dependency29.to=MessageActor
+dependency29.to=Enemy
 dependency10.type=UsesDependency
 class.StartButton.image=start_game.png
 dependency62.type=UsesDependency
-target36.naviview.expanded=true
-target26.naviview.expanded=true
 class.Ammunition.superclass=greenfoot.Actor
+<<<<<<< Updated upstream
 target12.y=610
 target12.x=120
+=======
+target12.y=490
+target12.x=10
+>>>>>>> Stashed changes
 target3.type=ClassTarget
 dependency61.from=FranceMapScreen
 target22.height=50
 dependency37.type=UsesDependency
+<<<<<<< Updated upstream
 target6.width=80
+=======
+target6.width=120
+>>>>>>> Stashed changes
 target7.typeParameters=
-dependency30.to=MyWorld
+dependency30.to=FranceMapScreen
 class.CipherOne.superclass=
 target27.type=ClassTarget
 dependency2.type=UsesDependency
+<<<<<<< Updated upstream
 target19.name=CipherActorOne
 target35.typeParameters=
 dependency24.to=Enemy
 target21.name=EnemyTank
+=======
+target19.name=City
+target35.typeParameters=
+dependency24.to=City
+target21.name=Screens
+class.AmmunitionFire.superclass=Enemy
+>>>>>>> Stashed changes
 class.enemyinterface.superclass=
 class.MessageActor.superclass=greenfoot.Actor
-target40.y=970
-dependency36.from=CipherSelector
-target40.x=10
+target40.y=70
+dependency36.from=MapSelector
+target40.x=70
 target18.height=50
+<<<<<<< Updated upstream
 target13.width=140
+=======
+target13.width=90
+>>>>>>> Stashed changes
 dependency18.to=City
 dependency1.from=NewGameScreen
 target45.showInterface=false
 dependency49.type=UsesDependency
 dependency7.to=MyWorld
 dependency24.type=UsesDependency
-target40.naviview.expanded=true
 class.City.superclass=greenfoot.Actor
 target39.type=ClassTarget
 dependency51.type=UsesDependency
 target19.showInterface=false
-target14.type=ClassTarget
+target14.type=InterfaceTarget
 target41.type=ClassTarget
+<<<<<<< Updated upstream
 target37.y=550
 target33.name=FranceMapScreen
+=======
+target37.y=910
+target33.name=CipherActorFour
+>>>>>>> Stashed changes
 target37.x=10
 dependency48.from=FranceMapScreen
-dependency59.to=EnemyPlane
-target24.naviview.expanded=true
-target14.naviview.expanded=true
-target34.naviview.expanded=true
+dependency59.to=EnemySoldier
 target33.typeParameters=
-dependency23.from=MyWorld
+dependency23.from=Ammunition
 class.CipherActorFour.superclass=CipherActor
+<<<<<<< Updated upstream
 target9.name=Enemy
+=======
+>>>>>>> Stashed changes
 target43.height=50
-dependency50.from=Ammunition
+target9.name=Enemy
+dependency50.from=EnemySoldier
 target42.showInterface=false
 target13.height=50
 dependency11.type=UsesDependency
 class.HomeScreen.image=game_homepage.jpg
 dependency13.to=Screens
-target28.naviview.expanded=true
-target18.naviview.expanded=true
 dependency63.type=UsesDependency
-target38.naviview.expanded=true
 class.CipherThree.superclass=greenfoot.Actor
+class.RocketAmmunition.superclass=Enemy
 target43.typeParameters=
 target16.showInterface=false
 dependency2.to=MapScreen
-dependency60.to=EnemySoldier
+dependency60.to=EnemySelector
 target40.width=140
 target39.height=50
+<<<<<<< Updated upstream
 target26.y=370
 target26.x=100
+=======
+target26.y=430
+target26.x=10
+>>>>>>> Stashed changes
 dependency10.from=NewGameButton
 target39.typeParameters=
 target4.type=ClassTarget
-dependency62.from=FranceMapScreen
+dependency62.from=GermanyMapScreen
 dependency38.type=UsesDependency
-dependency54.to=City
+dependency54.to=Timer
 editor.fx.0.height=700
 class.CipherSix.superclass=
 class.Enemy.superclass=greenfoot.Actor
 target28.type=ClassTarget
 dependency3.type=UsesDependency
 target13.showInterface=false
+<<<<<<< Updated upstream
 dependency48.to=cipher
 target2.y=790
 target2.x=10
 target22.name=Screens
+=======
+dependency48.to=CipherHintShow
+target2.y=670
+target2.x=10
+target22.name=CipherActorSix
+>>>>>>> Stashed changes
 class.EnemySoldier.superclass=Enemy
+dependency37.from=MapSelector
 target41.typeParameters=
-dependency37.from=CipherSelector
 class.NewGameScreen.image=naw_game_background.jpg
+<<<<<<< Updated upstream
 target31.width=140
 target34.height=50
 target15.y=190
 target15.x=100
 dependency2.from=RandomUtitility
 target26.width=90
+=======
+target31.width=130
+target34.height=50
+target15.y=550
+target15.x=140
+dependency2.from=RandomUtitility
+target26.width=120
+>>>>>>> Stashed changes
 target7.height=50
-target42.naviview.expanded=true
-target32.naviview.expanded=true
-target22.naviview.expanded=true
-target12.naviview.expanded=true
 dependency25.type=UsesDependency
 target37.typeParameters=
 dependency52.type=UsesDependency
 target15.type=InterfaceTarget
 target10.showInterface=false
 target42.type=ClassTarget
+<<<<<<< Updated upstream
 target16.naviview.expanded=true
 target34.name=CipherActorFour
 dependency49.from=Ammunition
@@ -273,13 +407,23 @@ version=2.8.0
 target43.y=550
 target22.width=80
 target43.x=10
+=======
+target34.name=MessageActor
+dependency49.from=FranceMapScreen
+dependency43.to=cipher
+dependency24.from=EnemySoldier
+version=2.8.0
+target43.y=850
+target22.width=130
+target43.x=160
+>>>>>>> Stashed changes
 target26.height=50
-dependency51.from=EnemyTank
+dependency51.from=Ammunition
 target4.showInterface=false
 target17.width=80
 target5.width=110
 target39.showInterface=false
-dependency37.to=CipherActorTwo
+dependency37.to=FranceMapScreen
 target2.height=50
 dependency12.type=UsesDependency
 dependency64.type=UsesDependency
@@ -289,40 +433,60 @@ target5.type=ClassTarget
 dependency63.from=GermanyMapScreen
 target1.width=120
 dependency39.type=UsesDependency
+<<<<<<< Updated upstream
 target32.y=730
 target1.showInterface=false
 target32.x=10
+=======
+target32.y=10
+target1.showInterface=false
+target32.x=190
+>>>>>>> Stashed changes
 target21.height=50
 target45.typeParameters=
 target36.showInterface=false
-target10.naviview.expanded=true
-target30.naviview.expanded=true
-target20.naviview.expanded=true
 target29.type=ClassTarget
 dependency4.type=UsesDependency
+<<<<<<< Updated upstream
 dependency32.to=FranceMapScreen
 target23.name=CipherActorSix
 dependency38.from=MyWorld
 simulation.speed=51
 target44.width=110
 dependency26.to=GermanyMapScreen
+=======
+dependency32.to=CipherActorOne
+target23.name=StartButton
+dependency38.from=MapSelector
+simulation.speed=57
+target44.width=120
+dependency26.to=Ammunition
+>>>>>>> Stashed changes
 target10.typeParameters=
 target29.y=1270
 target29.x=10
 target17.height=50
 dependency3.from=RandomUtitility
-target39.width=130
+target39.width=190
 dependency26.type=UsesDependency
 class.StartButton.superclass=Button
+<<<<<<< Updated upstream
 target21.y=310
 target33.showInterface=false
 class.FranceMapScreen.superclass=MapScreen
 target21.x=100
 target8.naviview.expanded=true
+=======
+target21.y=370
+target33.showInterface=false
+class.FranceMapScreen.superclass=MapScreen
+target21.x=10
+>>>>>>> Stashed changes
 dependency53.type=UsesDependency
-target16.type=ClassTarget
+target16.type=InterfaceTarget
 dependency9.to=MyWorld
 target43.type=ClassTarget
+<<<<<<< Updated upstream
 target35.name=MessageActor
 target5.y=910
 target5.x=160
@@ -332,24 +496,40 @@ target42.height=50
 target35.width=130
 dependency52.from=EnemyPlane
 target18.y=250
+=======
+target35.name=AttackButton
+target5.y=910
+target5.x=160
+target10.name=CipherActorThree
+dependency25.from=EnemySoldier
+target35.width=120
+target42.height=50
+dependency52.from=CipherSelector
+target18.y=850
+>>>>>>> Stashed changes
 target18.x=10
 target12.height=50
 dependency13.type=UsesDependency
-dependency21.to=City
+dependency21.to=Ammunition
 target30.showInterface=false
 <<<<<<<=Updated upstream
+<<<<<<< Updated upstream
 target10.y=970
 target10.x=160
+=======
+target10.y=1030
+target10.x=10
+>>>>>>> Stashed changes
 dependency40.type=UsesDependency
 dependency15.to=HomeScreen
 target30.type=ClassTarget
 dependency4.to=GermanyMapScreen
 dependency12.from=HomeScreen
 target6.type=ClassTarget
-dependency64.from=GermanyMapScreen
-target2.naviview.expanded=true
-dependency62.to=EnemySelector
+dependency64.from=StartButton
+dependency62.to=Enemy
 target7.showInterface=false
+<<<<<<< Updated upstream
 target9.width=80
 dependency5.type=UsesDependency
 target14.typeParameters=
@@ -366,26 +546,56 @@ target6.height=50
 dependency27.type=UsesDependency
 target35.y=850
 target35.x=160
+=======
+target9.width=120
+dependency5.type=UsesDependency
+target14.typeParameters=
+dependency56.to=Enemy
+target24.name=CipherHintShow
+dependency39.from=MyWorld
+class.Screens.superclass=greenfoot.Actor
+target21.width=80
+dependency10.to=HomeScreen
+dependency4.from=RandomUtitility
+target33.height=50
+target16.width=80
+target6.height=50
+dependency27.type=UsesDependency
+target35.y=1030
+target35.x=170
+>>>>>>> Stashed changes
 dependency54.type=UsesDependency
-target17.type=InterfaceTarget
+target17.type=ClassTarget
 target44.type=ClassTarget
+<<<<<<< Updated upstream
 target36.name=AttackButton
 class.CipherActorTwo.superclass=CipherActor
 target11.name=CipherActorThree
+=======
+target36.name=NewGameButton
+class.CipherActorTwo.superclass=CipherActor
+target11.name=EnemySoldier
+>>>>>>> Stashed changes
 target12.typeParameters=
 class.Timer.superclass=greenfoot.Actor
-dependency51.to=Ammunition
-dependency26.from=MyWorld
+dependency51.to=Enemy
+dependency26.from=EnemyPlane
 class.MapScreen.superclass=Screens
+<<<<<<< Updated upstream
 dependency53.from=EnemySoldier
 target12.width=110
+=======
+dependency53.from=CipherSelector
+target12.width=140
+>>>>>>> Stashed changes
 target25.height=50
 target44.showInterface=false
-dependency45.to=CipherHintShow
+dependency45.to=cipher
 dependency14.type=UsesDependency
 target1.height=50
 target22.typeParameters=
 target27.showInterface=false
+<<<<<<< Updated upstream
 target24.y=490
 dependency41.type=UsesDependency
 target24.x=160
@@ -399,23 +609,44 @@ target8.x=10
 dependency13.from=MyWorld
 target7.type=InterfaceTarget
 dependency40.from=MapScreen
+=======
+target24.y=1210
+dependency41.type=UsesDependency
+target24.x=150
+dependency39.to=MapSelector
+target31.type=ClassTarget
+target4.typeParameters=
+class.HomeScreen.superclass=Screens
+target18.typeParameters=
+target8.y=970
+target8.x=160
+dependency13.from=MyWorld
+target7.type=InterfaceTarget
+dependency40.from=CipherSelector
+>>>>>>> Stashed changes
 target41.showInterface=false
 target20.height=50
 target1.name=NewGameScreen
 dependency6.type=UsesDependency
 target24.showInterface=false
 dependency40.to=cipher
+<<<<<<< Updated upstream
 target13.y=490
 target13.x=10
 target25.name=CipherHintShow
+=======
+target13.y=670
+target13.x=190
+target25.name=EnemyPlane
+>>>>>>> Stashed changes
 target20.typeParameters=
-dependency34.to=MapSelector
-target34.width=140
+dependency34.to=MessageActor
+target34.width=130
 dependency5.from=FranceMapScreen
 target2.typeParameters=
 dependency28.type=UsesDependency
 target16.typeParameters=
-dependency28.to=EnemyTank
+dependency28.to=CipherActor
 target30.typeParameters=
 dependency55.type=UsesDependency
 class.CipherActorOne.superclass=CipherActor
@@ -424,9 +655,10 @@ editor.swing.0.height=1056
 dependency30.type=UsesDependency
 target21.showInterface=false
 target45.type=ClassTarget
-target41.y=850
-target41.x=160
+target41.y=430
+target41.x=130
 class.RandomUtitility.superclass=greenfoot.Actor
+<<<<<<< Updated upstream
 target37.name=NewGameButton
 target20.type=ClassTarget
 target12.name=EnemySoldier
@@ -437,29 +669,53 @@ target38.height=50
 dependency54.from=EnemySoldier
 target41.height=50
 target25.width=120
+=======
+target37.name=CipherActorTwo
+target20.type=ClassTarget
+target12.name=GermanyMapScreen
+target26.typeParameters=
+dependency27.from=EnemyPlane
+target30.width=140
+target38.height=50
+dependency54.from=MyWorld
+target25.width=90
+target41.height=50
+>>>>>>> Stashed changes
 target8.typeParameters=
 class.NewGameScreen.superclass=Screens
 dependency15.type=UsesDependency
 dependency42.type=UsesDependency
-target38.y=730
-target38.x=10
-dependency23.to=CipherActor
+target38.y=250
+target38.x=100
+dependency23.to=City
 target32.type=ClassTarget
+<<<<<<< Updated upstream
 target30.y=910
 target30.x=10
+=======
+target30.y=70
+target30.x=70
+>>>>>>> Stashed changes
 dependency14.from=MyWorld
 target8.type=ClassTarget
 dependency17.to=MapScreen
 class.EnemyPlane.superclass=Enemy
 dependency6.to=StartButton
-dependency41.from=AttackButton
+dependency41.from=NewGameScreen
 target24.typeParameters=
+<<<<<<< Updated upstream
 target4.width=110
 target38.showInterface=false
 target2.name=EnemyController
+=======
+target4.width=80
+target38.showInterface=false
+target2.name=AmmunitionInterface
+>>>>>>> Stashed changes
 dependency7.type=UsesDependency
-dependency64.to=Enemy
+dependency64.to=MessageActor
 target6.typeParameters=
+<<<<<<< Updated upstream
 target26.name=EnemyPlane
 target27.y=430
 target27.x=10
@@ -468,6 +724,14 @@ dependency58.to=EnemyTank
 editor.swing.0.width=1855
 target29.naviview.expanded=true
 target39.naviview.expanded=true
+=======
+target26.name=RandomUtitility
+target27.y=910
+target27.x=10
+target34.typeParameters=
+dependency58.to=EnemyPlane
+editor.swing.0.width=1873
+>>>>>>> Stashed changes
 target29.height=50
 dependency6.from=NewGameScreen
 target11.width=150
@@ -479,12 +743,18 @@ dependency12.to=NewGameButton
 class.FranceMapScreen.image=map_france.png
 dependency56.type=UsesDependency
 class.CipherActorSix.superclass=CipherActor
+<<<<<<< Updated upstream
 target3.y=670
 target3.x=10
+=======
+target3.y=730
+target3.x=140
+>>>>>>> Stashed changes
 target19.type=ClassTarget
 dependency31.type=UsesDependency
 dependency1.to=Button
 target18.showInterface=false
+<<<<<<< Updated upstream
 target38.name=EnemySelector
 class.EnemyController.superclass=
 target21.type=ClassTarget
@@ -493,43 +763,47 @@ target13.name=GermanyMapScreen
 mainWindow.x=65
 target16.y=550
 target16.x=140
+=======
+target38.name=Timer
+target21.type=ClassTarget
+mainWindow.y=24
+target13.name=MyWorld
+mainWindow.x=47
+target16.y=10
+target16.x=100
+>>>>>>> Stashed changes
 dependency28.from=MyWorld
-target40.name=CipherActorFour
-target43.width=120
-dependency55.from=EnemySoldier
+target40.name=CipherActorFive
+dependency55.from=MapScreen
+target43.width=130
 target32.typeParameters=
-class.Ammunition.image=rocket.png
-dependency30.from=NewGameScreen
-dependency53.to=Ammunition
+dependency30.from=MyWorld
+dependency53.to=CipherActorTwo
 target24.height=50
-target38.width=110
+target38.width=80
 dependency16.type=UsesDependency
 target32.showInterface=false
 dependency43.type=UsesDependency
-dependency47.to=CipherHintShow
-target43.naviview.expanded=true
-target33.naviview.expanded=true
+dependency47.to=ClientRequestManager
 target28.typeParameters=
 class.MyWorld.superclass=greenfoot.World
 target15.showInterface=false
 readme.name=@README
 target33.type=ClassTarget
 target42.typeParameters=
-target44.y=1210
+target44.y=1030
 class.Button.superclass=greenfoot.Actor
-target44.x=180
+target44.x=170
 dependency15.from=MyWorld
 target9.type=ClassTarget
-target37.naviview.expanded=true
-target27.naviview.expanded=true
-dependency42.from=NewGameScreen
-target17.naviview.expanded=true
+dependency42.from=GermanyMapScreen
 readme.y=10
 target16.height=50
-target9.showInterface=false
 readme.x=10
+target9.showInterface=false
 target38.typeParameters=
 class.EnemyTank.image=tank1.png
+<<<<<<< Updated upstream
 target3.name=AmmunitionInterface
 target29.width=160
 dependency8.type=UsesDependency
@@ -538,21 +812,41 @@ target12.showInterface=false
 dependency42.to=ClientRequestManager
 target33.y=430
 target33.x=130
+=======
+target3.name=CipherActor
+target29.width=190
+dependency8.type=UsesDependency
+target27.name=CipherActorTwo
+target12.showInterface=false
+dependency42.to=CipherHintShow
+target33.y=970
+target33.x=10
+>>>>>>> Stashed changes
 class.CipherHintShow.superclass=greenfoot.Actor
-target45.height=50
 dependency7.from=StartButton
+target45.height=50
 target40.typeParameters=
+<<<<<<< Updated upstream
 target24.width=130
 dependency36.to=CipherActorOne
 target6.showInterface=false
 dependency57.type=UsesDependency
 target11.height=50
 target8.width=100
+=======
+target24.width=140
+dependency36.to=MapScreen
+target6.showInterface=false
+dependency57.type=UsesDependency
+target11.height=50
+target8.width=130
+>>>>>>> Stashed changes
 dependency32.type=UsesDependency
 target36.typeParameters=
 editor.fx.0.width=700
-target39.name=FranceMapScreen
+target39.name=ClientRequestManager
 target22.type=ClassTarget
+<<<<<<< Updated upstream
 target14.name=MyWorld
 target41.naviview.expanded=true
 target31.naviview.expanded=true
@@ -569,30 +863,56 @@ target22.x=10
 class.CipherActor.superclass=greenfoot.Actor
 target40.height=50
 target15.width=110
+=======
+target14.name=enemyinterface
+dependency29.from=MyWorld
+target41.name=FranceMapScreen
+target20.width=140
+dependency56.from=EnemySelector
+target37.height=50
+>>>>>>>=Stashed changes
+dependency31.from=MyWorld
+target22.y=1090
+target22.x=10
+class.CipherActor.superclass=greenfoot.Actor
+target40.height=50
+target15.width=100
+>>>>>>> Stashed changes
 target3.showInterface=false
 dependency17.type=UsesDependency
-target15.naviview.expanded=true
-target35.naviview.expanded=true
-target25.naviview.expanded=true
 dependency44.type=UsesDependency
 target29.showInterface=false
+<<<<<<< Updated upstream
 target6.y=370
 target6.x=200
 dependency31.to=MapScreen
+=======
+target6.y=610
+target6.x=10
+dependency31.to=GermanyMapScreen
+>>>>>>> Stashed changes
 package.numDependencies=64
 target34.type=ClassTarget
-target9.naviview.expanded=true
 dependency16.from=MyWorld
+<<<<<<< Updated upstream
 dependency25.to=FranceMapScreen
 target19.naviview.expanded=true
 target19.y=850
+=======
+dependency25.to=EnemyTank
+target19.y=310
+>>>>>>> Stashed changes
 target19.x=10
 class.EnemyTank.superclass=Enemy
+dependency43.from=GermanyMapScreen
 target9.height=50
-dependency43.from=MyWorld
 target32.height=50
 target11.y=1030
+<<<<<<< Updated upstream
 target4.name=CipherActor
+=======
+target4.name=Button
+>>>>>>> Stashed changes
 target11.x=10
 dependency19.to=EnemyTank
 dependency9.type=UsesDependency
@@ -603,9 +923,15 @@ target44.typeParameters=
 target26.showInterface=false
 target28.name=Timer
 editor.swing.0.y=24
+<<<<<<< Updated upstream
 editor.swing.0.x=65
 mainWindow.height=1056
 target42.width=110
+=======
+editor.swing.0.x=47
+mainWindow.height=1056
+target42.width=140
+>>>>>>> Stashed changes
 dependency8.from=StartButton
 target28.height=50
 target40.showInterface=false
@@ -615,45 +941,67 @@ dependency58.type=UsesDependency
 dependency33.type=UsesDependency
 class.CipherFive.superclass=
 target23.showInterface=false
-target23.naviview.expanded=true
-target13.naviview.expanded=true
 dependency14.to=RandomUtitility
 target23.type=ClassTarget
+<<<<<<< Updated upstream
 target15.name=enemyinterface
+=======
+target15.name=HomeScreen
+>>>>>>> Stashed changes
 dependency3.to=FranceMapScreen
 class.CipherActorThree.superclass=CipherActor
-target42.name=AttackButton
+target42.name=CipherActorFour
 dependency57.from=EnemySelector
 dependency61.to=Enemy
+<<<<<<< Updated upstream
 target7.naviview.expanded=true
 dependency32.from=MapSelector
 target33.width=130
 target36.y=1210
 target36.x=180
+=======
+target33.width=140
+dependency32.from=MyWorld
+target36.y=550
+target36.x=10
+>>>>>>> Stashed changes
 target23.height=50
 dependency18.type=UsesDependency
 target28.width=80
 class.ClientRequestManager.superclass=greenfoot.Actor
 project.charset=UTF-8
-dependency55.to=EnemyTank
 dependency45.type=UsesDependency
+dependency55.to=cipher
 dependency20.type=UsesDependency
 target20.showInterface=false
 target35.type=ClassTarget
 target10.type=ClassTarget
+<<<<<<< Updated upstream
 dependency49.to=Enemy
+=======
+dependency49.to=cipher
+>>>>>>> Stashed changes
 dependency17.from=MyWorld
-dependency44.from=StartButton
+dependency44.from=MyWorld
 target15.height=50
+<<<<<<< Updated upstream
 target5.name=MapSelector
 target25.y=1330
 target25.x=10
 target19.width=140
 target7.width=160
+=======
+target25.y=370
+target5.name=MapSelector
+target25.x=100
+target19.width=80
+target7.width=170
+>>>>>>> Stashed changes
 target29.name=ClientRequestManager
 target13.typeParameters=
 target9.y=130
 target9.x=200
+<<<<<<< Updated upstream
 target1.naviview.expanded=true
 dependency50.to=City
 target11.naviview.expanded=true
@@ -670,4 +1018,20 @@ target14.y=130
 target10.height=50
 target14.x=10
 dependency38.to=CipherSelector
+=======
+dependency50.to=Ammunition
+dependency9.from=NewGameButton
+target1.y=250
+target1.x=190
+target44.height=50
+dependency44.to=CipherSelector
+class.EnemyPlane.image=plane.png
+dependency59.type=UsesDependency
+target3.width=110
+dependency34.type=UsesDependency
+target10.height=50
+target14.y=190
+target14.x=10
+dependency38.to=GermanyMapScreen
+>>>>>>> Stashed changes
 =\=\=\=\=\=\=

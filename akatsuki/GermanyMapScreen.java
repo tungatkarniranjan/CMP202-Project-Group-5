@@ -1,5 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
+import org.restlet.*;
+import org.restlet.resource.*;
+import org.json.JSONObject ;
+import org.restlet.resource.*;
+import org.restlet.representation.* ;
+import org.restlet.ext.json.* ;
+import org.restlet.data.* ;
+
 /**
  * Write a description of class FranceMapScreen here.
  * 
@@ -19,6 +27,10 @@ public class GermanyMapScreen extends MapScreen
     
     EnemyTank enemyTank;
     CipherHintShow cipherShow;
+    MouseInfo mouse;
+    City selectedCity;
+    cipher cipherObject;
+    boolean gameOver = false;
     
     GermanyMapScreen(){
         world = getWorld();
@@ -36,9 +48,111 @@ public class GermanyMapScreen extends MapScreen
         }
     }
     
+    public void checkResult(){
+    
+        if(greenfoot.Greenfoot.mouseClicked(null)){
+            mouse = Greenfoot.getMouseInfo();
+            Actor city  = mouse.getActor();
+            if(city instanceof City){
+                selectedCity = (City)city; 
+                System.out.println("Hey you clicked");
+            }
+            
+            if(selectedCity.cityName == this.cipherObject.decrypt("")){
+                try{
+                    ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/verifycitysaved"));   
+                    System.out.println("Yes, Correct City");
+                    JSONObject gameResult = new JSONObject();
+                    gameResult.put("citysaved",true);
+                    
+                    Representation result_string = client.post(new JsonRepresentation(gameResult), MediaType.APPLICATION_JSON);
+                    JSONObject json = new JSONObject( result_string.getText() ) ;
+                    if((boolean)json.get("winstatus")){
+                        System.out.println("You saved the city");
+                    }
+                }catch(Exception e){
+                    System.out.println("Unexpected exception occurred" + e);
+                }
+                
+            }
+            
+        }
+    }
+    
+    public void verifyGameOver(){
+            try{
+            ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/verifygameover"));   
+
+            Representation result_string = client.get();
+            JSONObject json = new JSONObject(result_string.getText());
+            if((boolean)json.get("over")){
+               System.out.println("Youor game is over"); 
+               gameOver = true;
+            }
+            else{
+                System.out.println("Youor game is NOT over"); 
+            }
+            
+        }catch(Exception e){
+            System.out.println("Unexpected exception occurred" + e);
+        }
+
+    
+    }
+    
     public void act() 
     {
-        // Add your action code here.
+        
+        checkResult();
+        if(!gameOver){
+            verifyGameOver();
+        }
+        
+
+/*        if(greenfoot.Greenfoot.mouseClicked(null)){
+            mouse = Greenfoot.getMouseInfo();
+            Actor city  = mouse.getActor();
+            if(city instanceof City){
+                selectedCity = (City)city; 
+                System.out.println("Hey you clicked");
+            }
+            
+            if(selectedCity.cityName == this.cipherObject.decrypt("")){
+                try{
+                    ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/verifycitysaved"));   
+                    System.out.println("Yes, Correct City");
+                    JSONObject gameResult = new JSONObject();
+                    gameResult.put("citysaved",true);
+                    
+                    Representation result_string = client.post(new JsonRepresentation(gameResult), MediaType.APPLICATION_JSON);
+                    JSONObject json = new JSONObject( result_string.getText() ) ;
+                    if((boolean)json.get("winstatus")){
+                        System.out.println("You saved the city");
+                    }
+                }catch(Exception e){
+                    System.out.println("Unexpected exception occurred" + e);
+                }
+                
+            }
+            
+        }
+        
+        try{
+            ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/verifygameover"));   
+
+            Representation result_string = client.get();
+            JSONObject json = new JSONObject(result_string.getText());
+            if((boolean)json.get("over")){
+               System.out.println("Youor game is over"); 
+            }
+            else{
+                System.out.println("Youor game is NOT over"); 
+            }
+            
+        }catch(Exception e){
+            System.out.println("Unexpected exception occurred" + e);
+        }*/
+
     }   
     
     public void plotCities(){
@@ -62,10 +176,10 @@ public class GermanyMapScreen extends MapScreen
     }
     
     public void setCipher(cipher cipherObject, int targetCity){
-        
+        this.cipherObject = cipherObject;
         String city = cities.get(targetCity);
         System.out.println(city);
-        String encryptedCity = cipherObject.encrypt(city);
+        String encryptedCity = this.cipherObject.encrypt(city);
         System.out.println(encryptedCity);
         cipherShow.showCipherText(encryptedCity, world);
     

@@ -12,7 +12,7 @@ import org.restlet.data.* ;
 
 public class MyWorld extends World
 {
-    //Screen Definitions
+
     Screens homeScreen;     
     Screens newGameScreen;
     
@@ -43,7 +43,6 @@ public class MyWorld extends World
 
         initializeHomeScreen();
         initializeRandomUitility();
-
         prepare();
     }
 

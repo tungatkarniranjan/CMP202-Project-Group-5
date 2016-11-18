@@ -1,5 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.awt.Color;
+import org.restlet.*;
+import org.restlet.resource.*;
+import org.json.JSONObject ;
+import org.restlet.resource.*;
+import org.restlet.representation.* ;
+import org.restlet.ext.json.* ;
+import org.restlet.data.* ;
 
 /**
  * Write a description of class Timer here.
@@ -67,6 +74,14 @@ public class Timer extends Actor
         image.drawRect(0, 0, image.getWidth()-1, image.getHeight()-1);
         image.drawImage(textImage, (image.getWidth()-textImage.getWidth())/2, (image.getHeight()-textImage.getHeight())/2);
         setImage(image);
+       
+        
+        if(mins == 0 && secs == 0)
+        {
+            ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/endgame"));
+            client.get();
+        }
+        
     }
  
     public void act()

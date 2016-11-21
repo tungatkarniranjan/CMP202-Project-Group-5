@@ -41,7 +41,7 @@ public class FranceMapScreen extends MapScreen
         // Add your action code here.
     }   
     
-    public void plotCities(){
+    public void plotCities(int targetCity){
  
         int x = 0;
         int y = 0;

@@ -8,7 +8,7 @@ import org.restlet.representation.* ;
 import org.restlet.ext.json.* ;
 import org.restlet.data.* ;
 
-/**
+/** 
  * Write a description of class FranceMapScreen here.
  * 
  * @author (your name) 
@@ -30,6 +30,8 @@ public class GermanyMapScreen extends MapScreen
     MouseInfo mouse;
     City selectedCity;
     cipher cipherObject;
+    int xTarget;
+    int yTarget;
     boolean gameOver = false;
     
     GermanyMapScreen(){
@@ -86,11 +88,11 @@ public class GermanyMapScreen extends MapScreen
             Representation result_string = client.get();
             JSONObject json = new JSONObject(result_string.getText());
             if((boolean)json.get("over")){
-               System.out.println("Youor game is over"); 
+               System.out.println("Your game is over"); 
                gameOver = true;
             }
             else{
-                System.out.println("Youor game is NOT over"); 
+                System.out.println("Your game is NOT over"); 
             }
             
         }catch(Exception e){
@@ -106,56 +108,19 @@ public class GermanyMapScreen extends MapScreen
         checkResult();
         if(!gameOver){
             verifyGameOver();
-        }
-        
-
-/*        if(greenfoot.Greenfoot.mouseClicked(null)){
-            mouse = Greenfoot.getMouseInfo();
-            Actor city  = mouse.getActor();
-            if(city instanceof City){
-                selectedCity = (City)city; 
-                System.out.println("Hey you clicked");
-            }
-            
-            if(selectedCity.cityName == this.cipherObject.decrypt("")){
-                try{
-                    ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/verifycitysaved"));   
-                    System.out.println("Yes, Correct City");
-                    JSONObject gameResult = new JSONObject();
-                    gameResult.put("citysaved",true);
-                    
-                    Representation result_string = client.post(new JsonRepresentation(gameResult), MediaType.APPLICATION_JSON);
-                    JSONObject json = new JSONObject( result_string.getText() ) ;
-                    if((boolean)json.get("winstatus")){
-                        System.out.println("You saved the city");
-                    }
-                }catch(Exception e){
-                    System.out.println("Unexpected exception occurred" + e);
+        }else{
+            if(!getWorld().getObjects(Enemy.class).isEmpty()){
+                List<Enemy> allEnemyObjects = getWorld().getObjects(Enemy.class);
+                int yOffset = -60;
+                for(Enemy enemy :allEnemyObjects){
+                       enemy.attack(xTarget, yTarget + yOffset, xTarget, yTarget);
+                       yOffset += 30;
                 }
-                
-            }
-            
+          }
         }
-        
-        try{
-            ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/verifygameover"));   
-
-            Representation result_string = client.get();
-            JSONObject json = new JSONObject(result_string.getText());
-            if((boolean)json.get("over")){
-               System.out.println("Youor game is over"); 
-            }
-            else{
-                System.out.println("Youor game is NOT over"); 
-            }
-            
-        }catch(Exception e){
-            System.out.println("Unexpected exception occurred" + e);
-        }*/
-
     }   
     
-    public void plotCities(){
+    public void plotCities(int targetCity){
  
         int x = 0;
         int y = 0;
@@ -164,15 +129,16 @@ public class GermanyMapScreen extends MapScreen
         for(int i = 0; i < CityStore.size(); i++)
         {
             world.addObject(CityStore.get(i), x+100, y+100);
+            if(targetCity == i){
+                this.xTarget = x + 100;
+                this.yTarget = y + 100;
+            }
+            
             x = x + 400;
             y = y + 350;
         }
         
         world.addObject(enemyTank, 800, 400);
-        
-        //City city1 = new City("Paris",null, 100, 100 );
-        //World world1 = getWorld();
-        //world1.addObject(city1,300, 300);
     }
     
     public void setCipher(cipher cipherObject, int targetCity){

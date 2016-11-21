@@ -75,11 +75,12 @@ public class MyWorld extends World
         addObject(randomMap, 800, 500);
 
         CipherSelector cipherSelector = new CipherSelector();
-        cipher randomCipher = cipherSelector.produceCipher(1); 
-
-        randomMap.plotCities();
-        randomMap.setCipher(randomCipher, 0);
+        cipher randomCipher = cipherSelector.produceCipher(1);
+        
+        randomMap.plotCities(this.city);
+        randomMap.setCipher(randomCipher, this.city);
         randomMap.setEnemy(this.enemy);
+
         
         addObject(new Timer(60),115,45);
 

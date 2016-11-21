@@ -15,7 +15,7 @@ import org.restlet.data.* ;
  */
 public class ClientRequestManager extends Actor
 {
-    private static final String baseURL = "http://localhost:8080";
+    private static final String baseURL = "http://10.0.0.67:8080";
     
     public static String getRequestURL(String URI)
     {

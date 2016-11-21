@@ -18,6 +18,9 @@ public class Ammunition extends Actor
         this.enemy = enemy;
         this.attackXpos =attackXpos;
         this.attackYpos=attackYpos;
+        //this.attackXpos =600;
+        //this.attackYpos=500;
+
     }
     
     public void act()

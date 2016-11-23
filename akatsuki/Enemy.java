@@ -133,7 +133,6 @@ public class Enemy extends Actor implements EnemyCommandBase
 
         }
         count++;
-              System.out.println(state);
     }
     
     

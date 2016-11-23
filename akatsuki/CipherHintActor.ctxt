@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=CipherHintActor
+comment0.text=\n\ Write\ a\ description\ of\ class\ CipherHintActor\ here.\n\ \n\ @author\ (your\ name)\ \n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=CipherHintActor()
+comment2.params=hint\ world
+comment2.target=void\ showCipherHint(greenfoot.GreenfootImage,\ greenfoot.World)
+numComments=3

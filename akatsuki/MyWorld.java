@@ -78,6 +78,7 @@ public class MyWorld extends World
         cipher randomCipher = cipherSelector.produceCipher(1);
         
         randomMap.plotCities(this.city);
+        System.out.println("I am here in world");
         randomMap.setCipher(randomCipher, this.city);
         randomMap.setEnemy(this.enemy);
 

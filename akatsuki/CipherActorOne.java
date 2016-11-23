@@ -58,8 +58,8 @@ public class CipherActorOne extends CipherActor
 
 	// Will return an actor of Hint Class specific for that cipher
 	public Object getHint() {
-		//Yet to be implemented
-		return "";
+		GreenfootImage cityImg = new GreenfootImage("./images/hint.png");
+		return cityImg;
 	}
 
 	// check if the answer submitted by the player is correct

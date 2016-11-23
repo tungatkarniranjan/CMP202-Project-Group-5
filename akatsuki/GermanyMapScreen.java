@@ -125,7 +125,6 @@ public class GermanyMapScreen extends MapScreen
         int x = 0;
         int y = 0;
         world = getWorld();
-        enemyTank = new EnemyTank();
         for(int i = 0; i < CityStore.size(); i++)
         {
             world.addObject(CityStore.get(i), x+100, y+100);
@@ -138,7 +137,6 @@ public class GermanyMapScreen extends MapScreen
             y = y + 350;
         }
         
-        world.addObject(enemyTank, 800, 400);
     }
     
     public void setCipher(cipher cipherObject, int targetCity){

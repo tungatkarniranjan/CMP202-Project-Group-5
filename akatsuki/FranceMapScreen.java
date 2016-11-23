@@ -46,15 +46,13 @@ public class FranceMapScreen extends MapScreen
         int x = 0;
         int y = 0;
         world = getWorld();
-        enemyTank = new EnemyTank();
         for(int i = 0; i < CityStore.size(); i++)
         {
-            world.addObject(CityStore.get(i), x+100, y+100);
+            world.addObject(CityStore.get(i), x+300, y+200);
             x = x + 250;
             y = y + 150;
         }
         
-        //world.addObject(enemyTank, 800, 400);
     }
     
     public void setCipher(cipher cipherObject, int targetCity){

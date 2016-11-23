@@ -17,6 +17,8 @@ public class Enemy extends Actor implements EnemyCommandBase
     protected String state ="moveFree";
     protected int positionX;
     protected int positionY;
+    private int xTarget;
+    private int yTarget;
     private     int count = 0;;
     public void act() 
     {
@@ -75,9 +77,11 @@ public class Enemy extends Actor implements EnemyCommandBase
         }
     };
     
-    public void attack(int X, int Y){
+    public void attack(int X, int Y, int xTarget, int yTarget){
         positionX = X;
         positionY = Y;
+        this.xTarget = xTarget;
+        this.yTarget = yTarget;
         state ="attack";
         
     };
@@ -125,7 +129,7 @@ public class Enemy extends Actor implements EnemyCommandBase
               setRotation(0);
               Actor ammunition;
               if(this.count%70==0){
-                getWorld().addObject(new Ammunition(this,X,Y), getX(), getY());
+                getWorld().addObject(new Ammunition(this,xTarget, yTarget), getX(), getY());
 
         }
         count++;

@@ -18,8 +18,8 @@ public class NewGameScreen extends Screens
     Button startButton;
     MessageActor message; 
 
-    private static final int xPosition = 100;
-    private static final int yPosition = 80; 
+    private static final int xPosition = 200;
+    private static final int yPosition = 50; 
     
     int playersConnected = 0;
     int gameStarted = 0;

@@ -26,7 +26,7 @@ public class CipherHintShow  extends Actor
         setImage(image);
        
         
-        world.addObject(this, 1400, 50); 
+        world.addObject(this, 450, 50); 
 
     }
     

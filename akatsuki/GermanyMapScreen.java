@@ -81,6 +81,8 @@ public class GermanyMapScreen extends MapScreen
                         System.out.println("You saved the city");
                         removeEnemies();
                         isWin = true;
+                        WinActor winActor = new WinActor();
+                        winActor.displayMessage(world);
                     }
                 }catch(Exception e){
                     System.out.println("Unexpected exception occurred" + e);

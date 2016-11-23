@@ -18,7 +18,6 @@ public class EnemySelector
     
     public Enemy produceEnemies(int enemyId){
         System.out.println("Producing the enemy");
-        int counter = 0;
         String enemyName = enemies.get(enemyId);
         Enemy enemy;
         if(enemyName == "Tank"){

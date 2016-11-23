@@ -24,6 +24,6 @@ public class CipherHintActor extends Actor
     public void showCipherHint(GreenfootImage hint, World world){
         
         setImage(hint);
-        world.addObject(this, 600, 50); 
+        world.addObject(this, 900, 50); 
     }
 }

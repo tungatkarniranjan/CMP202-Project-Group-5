@@ -1,5 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
+import org.restlet.*;
+import org.restlet.resource.*;
+import org.json.JSONObject ;
+import org.restlet.resource.*;
+import org.restlet.representation.* ;
+import org.restlet.ext.json.* ;
+import org.restlet.data.* ;
 /**
  * Write a description of class FranceMapScreen here.
  * 
@@ -8,8 +15,9 @@ import java.util.*;
  */
 public class FranceMapScreen extends MapScreen
 {
+ 
     /**
-     * Act - do whatever the FranceMapScreen wants to do. This method is called whenever
+     * Act - do whatever the GermanyMapScreen wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     ArrayList <City>CityStore = new ArrayList<City>();
@@ -17,28 +25,113 @@ public class FranceMapScreen extends MapScreen
     ArrayList <Enemy>enemies = new ArrayList<>();
     World world;
     
-    EnemyTank enemyTank;
     CipherHintShow cipherShow;
-
+    CipherHintActor cipherHint;
+    MouseInfo mouse;
+    City selectedCity;
+    cipher cipherObject;
+    int xTarget;
+    int yTarget;
+    boolean gameOver = false;
+    boolean isWin = false;
+    
     FranceMapScreen(){
         world = getWorld();
         cities.add("Paris");
         cities.add("Munich");
         cities.add("Frankfurt");
-            
+        
         cipherShow = new CipherHintShow();
+        cipherHint = new CipherHintActor();
         int counter = 0;
         
-        for(counter =0; counter < cities.size(); counter++){   
+        for(counter = 0; counter < cities.size(); counter++){   
             GreenfootImage cityImg = new GreenfootImage("./images/"+cities.get(counter) + ".png");
             City city = new City(cities.get(counter), cityImg, 100, 100);
             CityStore.add(city);
         }
     }
     
+    public void removeEnemies(){
+        world.removeObjects(world.getObjects(Enemy.class));
+    }
+    
+    
+    public void checkResult(){
+    
+        if(greenfoot.Greenfoot.mouseClicked(null)){
+            mouse = Greenfoot.getMouseInfo();
+            Actor city  = mouse.getActor();
+            if(city instanceof City){
+                selectedCity = (City)city; 
+                System.out.println("Hey you clicked");
+            }
+            
+            if(selectedCity.cityName == this.cipherObject.decrypt("")){
+                try{
+                    ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/verifycitysaved"));   
+                    System.out.println("Yes, Correct City");
+                    JSONObject gameResult = new JSONObject();
+                    gameResult.put("citysaved",true);
+                    
+                    Representation result_string = client.post(new JsonRepresentation(gameResult), MediaType.APPLICATION_JSON);
+                    JSONObject json = new JSONObject( result_string.getText() ) ;
+                    if((boolean)json.get("winstatus")){
+                        System.out.println("You saved the city");
+                        removeEnemies();
+                        isWin = true;
+                        WinActor winActor = new WinActor();
+                        winActor.displayMessage(world);
+                    }
+                }catch(Exception e){
+                    System.out.println("Unexpected exception occurred" + e);
+                }
+                
+            }
+            
+        }
+    }
+    
+    public void verifyGameOver(){
+            try{
+            ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/verifygameover"));   
+
+            Representation result_string = client.get();
+            JSONObject json = new JSONObject(result_string.getText());
+            if((boolean)json.get("over")){
+               System.out.println("Your game is over"); 
+               gameOver = true;
+            }
+            else{
+                System.out.println("Your game is NOT over"); 
+            }
+            
+        }catch(Exception e){
+            System.out.println("Unexpected exception occurred" + e);
+        }
+
+    
+    }
+    
     public void act() 
     {
-        // Add your action code here.
+        
+        checkResult();
+        if(!gameOver){
+            verifyGameOver();
+        }else{
+            if(!getWorld().getObjects(Enemy.class).isEmpty()){
+                List<Enemy> allEnemyObjects = getWorld().getObjects(Enemy.class);
+                int yOffset = -60;
+                for(Enemy enemy :allEnemyObjects){
+                        if(isWin == false){
+                            enemy.attack(xTarget, yTarget + yOffset, xTarget, yTarget);
+                            yOffset += 30;
+                        }
+                       
+                }
+          }
+        }
     }   
     
     public void plotCities(int targetCity){
@@ -48,19 +141,30 @@ public class FranceMapScreen extends MapScreen
         world = getWorld();
         for(int i = 0; i < CityStore.size(); i++)
         {
-            world.addObject(CityStore.get(i), x+300, y+200);
-            x = x + 250;
-            y = y + 150;
+            world.addObject(CityStore.get(i), x+100, y+100);
+            world.showText(CityStore.get(i).cityName, x+100, y+150);
+            if(targetCity == i){
+                this.xTarget = x + 100;
+                this.yTarget = y + 100;
+            }
+            
+            x = x + 400;
+            y = y + 350;
         }
         
     }
     
     public void setCipher(cipher cipherObject, int targetCity){
+        System.out.println("Here in cipher req");
+        this.cipherObject = cipherObject;
         String city = cities.get(targetCity);
         System.out.println(city);
-        String encryptedCity = cipherObject.encrypt(city);
+        String encryptedCity = this.cipherObject.encrypt(city);
         System.out.println(encryptedCity);
+        System.out.println("This is here in setting icpher");
         cipherShow.showCipherText(encryptedCity, world);
+        cipherHint.showCipherHint((GreenfootImage)cipherObject.getHint(), world);
+        //cipherShow.showCipherHint((GreenfootImage)cipherObject.getHint(), world);
     
     }
     
@@ -77,5 +181,4 @@ public class FranceMapScreen extends MapScreen
             y += 100;
         }
     }
-
 }

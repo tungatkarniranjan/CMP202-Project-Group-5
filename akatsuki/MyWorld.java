@@ -83,7 +83,7 @@ public class MyWorld extends World
 
         
         addObject(new Timer(60),115,45);
-
+        removeObjects(getObjects(MessageActor.class)); 
     }
     public void make_newgame_request()
     {

@@ -80,6 +80,7 @@ public class Timer extends Actor
         {
             ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/endgame"));
             client.get();
+            stop();
         }
         
     }

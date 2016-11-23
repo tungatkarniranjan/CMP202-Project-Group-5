@@ -17,12 +17,7 @@ public class CipherHintShow  extends Actor
 
     // This method displays the encrypted string of city.
     public void showCipherText(String cipherText, World world){
-        System.out.println("Here");
-        //img.setColor(java.awt.Color.black);
-        //img.setFont(new Font("Times New Roman", Font.BOLD, 40));
-        //img.drawString(cipherText, 50, 50);
-        //setImage(img); 
-        //world.addObject(this, 1400, 50);
+        
         String text = "CODE : " + cipherText;
         GreenfootImage textImage = new GreenfootImage(text, 30, Color.black, new Color(0, 0, 0, 0));
         GreenfootImage image = new GreenfootImage(textImage.getWidth()+20, textImage.getHeight()+10);
@@ -31,10 +26,14 @@ public class CipherHintShow  extends Actor
         setImage(image);
        
         
-        world.addObject(this, 1400, 50);
-        
-        //world.showText(cipherText, 1400, 500);
-        System.out.println("I came here");
+        world.addObject(this, 1400, 50); 
+
     }
+    
+    //public void showCipherHint(GreenfootImage hint, World world){
+    //    System.out.println("Showing hint here");
+    //    world.addObject(hint, 500, 80);
+    //}
+    
     
   }

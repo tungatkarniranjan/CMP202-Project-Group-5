@@ -21,7 +21,7 @@ public class MessageActor extends Actor
     
     public void initImage(String text)
     {
-        GreenfootImage textImage = new GreenfootImage(text, 30, Color.black, new Color(0, 0, 0, 0));
+        GreenfootImage textImage = new GreenfootImage(text, 20, Color.black, new Color(0, 0, 0, 0));
         img = new GreenfootImage(textImage.getWidth()+20, textImage.getHeight()+10);
         img.drawRect(0, 0, img.getWidth()-1, img.getHeight()-1);
         img.drawImage(textImage, (img.getWidth()-textImage.getWidth())/2, (img.getHeight()-textImage.getHeight())/2);

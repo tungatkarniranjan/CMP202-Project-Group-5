@@ -27,12 +27,14 @@ public class GermanyMapScreen extends MapScreen
     
     EnemyTank enemyTank;
     CipherHintShow cipherShow;
+    CipherHintActor cipherHint;
     MouseInfo mouse;
     City selectedCity;
     cipher cipherObject;
     int xTarget;
     int yTarget;
     boolean gameOver = false;
+    boolean isWin = false;
     
     GermanyMapScreen(){
         world = getWorld();
@@ -41,6 +43,7 @@ public class GermanyMapScreen extends MapScreen
         cities.add("Frankfurt");
         
         cipherShow = new CipherHintShow();
+        cipherHint = new CipherHintActor();
         int counter = 0;
         
         for(counter = 0; counter < cities.size(); counter++){   
@@ -49,6 +52,11 @@ public class GermanyMapScreen extends MapScreen
             CityStore.add(city);
         }
     }
+    
+    public void removeEnemies(){
+        world.removeObjects(world.getObjects(Enemy.class));
+    }
+    
     
     public void checkResult(){
     
@@ -71,6 +79,8 @@ public class GermanyMapScreen extends MapScreen
                     JSONObject json = new JSONObject( result_string.getText() ) ;
                     if((boolean)json.get("winstatus")){
                         System.out.println("You saved the city");
+                        removeEnemies();
+                        isWin = true;
                     }
                 }catch(Exception e){
                     System.out.println("Unexpected exception occurred" + e);
@@ -113,8 +123,11 @@ public class GermanyMapScreen extends MapScreen
                 List<Enemy> allEnemyObjects = getWorld().getObjects(Enemy.class);
                 int yOffset = -60;
                 for(Enemy enemy :allEnemyObjects){
-                       enemy.attack(xTarget, yTarget + yOffset, xTarget, yTarget);
-                       yOffset += 30;
+                        if(isWin == false){
+                            enemy.attack(xTarget, yTarget + yOffset, xTarget, yTarget);
+                            yOffset += 30;
+                        }
+                       
                 }
           }
         }
@@ -128,6 +141,7 @@ public class GermanyMapScreen extends MapScreen
         for(int i = 0; i < CityStore.size(); i++)
         {
             world.addObject(CityStore.get(i), x+100, y+100);
+            world.showText(CityStore.get(i).cityName, x+100, y+150);
             if(targetCity == i){
                 this.xTarget = x + 100;
                 this.yTarget = y + 100;
@@ -140,12 +154,16 @@ public class GermanyMapScreen extends MapScreen
     }
     
     public void setCipher(cipher cipherObject, int targetCity){
+        System.out.println("Here in cipher req");
         this.cipherObject = cipherObject;
         String city = cities.get(targetCity);
         System.out.println(city);
         String encryptedCity = this.cipherObject.encrypt(city);
         System.out.println(encryptedCity);
+        System.out.println("This is here in setting icpher");
         cipherShow.showCipherText(encryptedCity, world);
+        cipherHint.showCipherHint((GreenfootImage)cipherObject.getHint(), world);
+        //cipherShow.showCipherHint((GreenfootImage)cipherObject.getHint(), world);
     
     }
     

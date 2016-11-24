@@ -1,0 +1,16 @@
+docker rm id
+docker rmi id
+docker build -f Dockerfile -t akatsukiserver .
+docker run -i -p 8080:8080 akatsukiserver
+docker tag 2839f9e21aa6 tungatkarniranjan/akatsukiserver:latest
+docker push tungatkarniranjan/akatsukiserver
+
+Further instructions
+
+Configure EC2 instance on amazon. -> Create appropriate user in IAM. ->Give EC2 Full Access to this user.
+Amazon will provide the user credentials -> configure these while creating the node cluster.
+Create a service using the above image pushed on the docker cloud.
+Deploy the node cluster
+Start the service
+If All is well the -> Sapaliga
+

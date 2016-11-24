@@ -14,12 +14,9 @@ public class VerifyGameOverResource extends ServerResource {
 	
 	@Get
 	public Representation verifyGameStarted() {
-
 		gameStateAssigner = GameEnvironment.getGameStateAssigner();
-		
 		JSONObject jsonResponse = new JSONObject();
 		jsonResponse.put("over", gameStateAssigner.verifyGameOver());
-		
 		return new JsonRepresentation(jsonResponse);
 	}
 }

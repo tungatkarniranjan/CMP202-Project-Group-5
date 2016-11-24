@@ -15,17 +15,9 @@ public class VerifyPlayersResource extends ServerResource {
 	
 	@Get
 	public Representation verifyPlayersConnection() {
-
 		gameStateAssigner = GameEnvironment.getGameStateAssigner();
-		
 		JSONObject jsonResponse = new JSONObject();
 		jsonResponse.put("connected", gameStateAssigner.verifyPlayers());
-		/*if (Players.getNoPlayers() == 2) {
-			jsonResponse.put("connected", true);
-		} else {
-			jsonResponse.put("connected", false);
-		}*/
-		
 		return new JsonRepresentation(jsonResponse);
 	}
 

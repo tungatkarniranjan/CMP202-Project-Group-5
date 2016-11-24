@@ -29,4 +29,8 @@ public class MapScreen extends Screens
     
     public void atack(){
     }
+    
+    public void setMyWorld(MyWorld myWorld){
+    
+    }
 }

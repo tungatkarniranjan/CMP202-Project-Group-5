@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
+import java.util.Calendar;
 import org.restlet.*;
 import org.restlet.resource.*;
 import org.json.JSONObject ;
@@ -7,7 +8,9 @@ import org.restlet.resource.*;
 import org.restlet.representation.* ;
 import org.restlet.ext.json.* ;
 import org.restlet.data.* ;
-/**
+
+
+/** 
  * Write a description of class FranceMapScreen here.
  * 
  * @author (your name) 
@@ -15,7 +18,6 @@ import org.restlet.data.* ;
  */
 public class FranceMapScreen extends MapScreen
 {
- 
     /**
      * Act - do whatever the GermanyMapScreen wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -24,22 +26,27 @@ public class FranceMapScreen extends MapScreen
     ArrayList <String>cities = new ArrayList<String>();
     ArrayList <Enemy>enemies = new ArrayList<>();
     World world;
+    MyWorld myWorld;
     
+    EnemyTank enemyTank;
     CipherHintShow cipherShow;
     CipherHintActor cipherHint;
     MouseInfo mouse;
     City selectedCity;
     cipher cipherObject;
+    int counter = 0;
     int xTarget;
     int yTarget;
     boolean gameOver = false;
     boolean isWin = false;
+    boolean endgame = false;
     
     FranceMapScreen(){
         world = getWorld();
-        cities.add("Paris");
         cities.add("Munich");
         cities.add("Frankfurt");
+        cities.add("Hamburg");       
+        cities.add("Berlin");
         
         cipherShow = new CipherHintShow();
         cipherHint = new CipherHintActor();
@@ -56,6 +63,51 @@ public class FranceMapScreen extends MapScreen
         world.removeObjects(world.getObjects(Enemy.class));
     }
     
+    public void setMyWorld(MyWorld myWorld){
+        this.myWorld = myWorld;
+    }
+    
+    
+    public void addDelay(){
+        System.out.println("Before");
+        Calendar calendar = Calendar.getInstance();
+        int currentSec = calendar.get(Calendar.SECOND);
+        int finalSec = currentSec + 1;
+        while(true){
+            System.out.println("Mean while");
+            if(Calendar.getInstance().get(Calendar.SECOND) > finalSec){
+                break;
+            }
+        }
+    
+    }
+    
+    public void cleanUp(){
+        /*
+        for(counter = 0; counter <= 5; counter++){
+            try{
+                thread.sleep(1000);
+            }catch(Exception e){
+                e.printStackTrace();
+            }
+        }*/ 
+        //addDelay();
+        System.out.println("I am here after waiting for some time");
+        world.removeObjects(world.getObjects(MessageActor.class));
+        world.removeObjects(world.getObjects(CipherHintShow.class));
+        world.removeObjects(world.getObjects(CipherHintShow.class));
+        Greenfoot.setWorld(new MyWorld());
+        
+        
+        try{
+            ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/resetgame"));   
+            Representation result_string = client.get();
+            this.myWorld.initializeHomeScreen();
+            
+        }catch(Exception e){
+            System.out.println("Unexpected exception occurred" + e);
+        }
+    }
     
     public void checkResult(){
     
@@ -80,6 +132,7 @@ public class FranceMapScreen extends MapScreen
                         System.out.println("You saved the city");
                         removeEnemies();
                         isWin = true;
+                        endgame = true;
                         WinActor winActor = new WinActor();
                         winActor.displayMessage(world);
                     }
@@ -93,45 +146,55 @@ public class FranceMapScreen extends MapScreen
     }
     
     public void verifyGameOver(){
-            try{
+        try{
             ClientResource client = ClientRequestManager.getClient(ClientRequestManager.getRequestURL("/verifygameover"));   
 
             Representation result_string = client.get();
             JSONObject json = new JSONObject(result_string.getText());
-            if((boolean)json.get("over")){
+            if((boolean)json.get("over") && !isWin){
                System.out.println("Your game is over"); 
                gameOver = true;
-            }
-            else{
-                System.out.println("Your game is NOT over"); 
+               endgame = true;
+               GameOverActor gameOver = new GameOverActor(); 
+               gameOver.displayMessage(world);
             }
             
         }catch(Exception e){
             System.out.println("Unexpected exception occurred" + e);
         }
-
+ 
     
     }
     
-    public void act() 
+    public void act()
     {
+        if(!endgame){
+            checkResult();
+            if(!gameOver){
+                verifyGameOver();
+            }
+        }
         
-        checkResult();
-        if(!gameOver){
-            verifyGameOver();
-        }else{
-            if(!getWorld().getObjects(Enemy.class).isEmpty()){
-                List<Enemy> allEnemyObjects = getWorld().getObjects(Enemy.class);
-                int yOffset = -60;
-                for(Enemy enemy :allEnemyObjects){
-                        if(isWin == false){
-                            enemy.attack(xTarget, yTarget + yOffset, xTarget, yTarget);
-                            yOffset += 30;
-                        }
-                       
+        if(endgame && gameOver){
+                if(!getWorld().getObjects(Enemy.class).isEmpty()){
+                    List<Enemy> allEnemyObjects = getWorld().getObjects(Enemy.class);
+                    int yOffset = -60;
+                    for(Enemy enemy :allEnemyObjects){
+                            if(isWin == false){
+                                enemy.attack(xTarget, yTarget + yOffset, xTarget, yTarget);
+                                yOffset += 30;
+                            }
+                           
+                    }
+                    System.out.println("In game over");
                 }
-                
-          }
+        }
+        
+        if(endgame){
+            counter++;
+            if(counter > 100){
+                cleanUp();
+            }
         }
     }   
     
@@ -194,4 +257,5 @@ public class FranceMapScreen extends MapScreen
             y += 100;
         }
     }
+    
 }

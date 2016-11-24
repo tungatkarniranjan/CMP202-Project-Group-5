@@ -75,7 +75,7 @@ public class Enemy extends Actor implements EnemyCommandBase
         {
             turn(Greenfoot.getRandomNumber(90)-75);
         }
-    };
+    }
     
     public void attack(int X, int Y, int xTarget, int yTarget){
         positionX = X;
@@ -84,7 +84,7 @@ public class Enemy extends Actor implements EnemyCommandBase
         this.yTarget = yTarget;
         state ="attack";
         
-    };
+    }
 
     public boolean checkActor(Class clss)
     {

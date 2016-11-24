@@ -42,4 +42,9 @@ public class NewGameState implements GameState {
 	{
 		return false;
 	}
+	
+	public void resetGame()
+	{
+		System.out.println("Game can't be reset");
+	}
 }

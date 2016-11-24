@@ -44,4 +44,9 @@ public class GameOverState implements GameState {
 		return true;
 	}
 	
+	public void resetGame()
+	{
+		gameStateAssigner.setState(gameStateAssigner.getNoPlayerState());
+	}
+	
 }

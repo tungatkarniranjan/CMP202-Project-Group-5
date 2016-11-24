@@ -9,4 +9,5 @@ public interface GameState {
 	public boolean verifyGameStarted();
 	public void endGame();
 	public boolean verifyGameOver();
+	public void resetGame();
 }

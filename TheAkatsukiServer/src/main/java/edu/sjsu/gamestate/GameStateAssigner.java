@@ -26,6 +26,11 @@ public class GameStateAssigner {
 		currentState = state;
 	}
 	
+	public GameState getNoPlayerState()
+	{
+		return noPlayerState;
+	}
+	
 	public GameState getNewGameState()
 	{
 		return newGameState;
@@ -80,5 +85,11 @@ public class GameStateAssigner {
 	{
 		return currentState.verifyGameOver();
 	}
+	
+	public void resetGame()
+	{
+		currentState.resetGame();
+	}
+	
 	
 }

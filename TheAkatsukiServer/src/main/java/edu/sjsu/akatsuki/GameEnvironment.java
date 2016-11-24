@@ -58,4 +58,10 @@ public class GameEnvironment {
 	{
 		return gameStateAssigner;
 	}
+	
+	public static void resetGameEnv()
+	{
+		gameEnv = null;
+		gameStateAssigner = null;
+	}
 }

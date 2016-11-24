@@ -26,7 +26,7 @@ public class MyWorld extends World
 
     ArrayList <CipherActor>CipherStore = new ArrayList<CipherActor>();
     ArrayList <Enemy>EnemyStore = new ArrayList<Enemy>();    
-    private static final int CITIES = 5;
+    private static final int CITIES = 4;
     private static final int MAPS = 2;
     private static final int CIPHERS = 2;
     private static final int ENEMIES = 3;
@@ -80,6 +80,7 @@ public class MyWorld extends World
         randomMap.plotCities(this.city);
         System.out.println("I am here in world");
         randomMap.setCipher(randomCipher, this.city);
+        System.out.println(this.enemy);
         randomMap.setEnemy(this.enemy);
 
         
@@ -97,7 +98,7 @@ public class MyWorld extends World
             newGame.put("maps",MAPS); //add total number of maps available
             newGame.put("cities",CITIES); //add total number of cities available            
             newGame.put("ciphers",CIPHERS); //add total number of cipher available
-            newGame.put("enemies",EnemyStore.size()); //add total number of enemy available
+            newGame.put("enemies",ENEMIES); //add total number of enemy available
 
             Representation result_string = client.post(new JsonRepresentation(newGame), MediaType.APPLICATION_JSON);
             JSONObject json = new JSONObject( result_string.getText() ) ;

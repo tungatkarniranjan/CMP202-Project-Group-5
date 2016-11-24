@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Wed Nov 23 15:05:31 PST 2016
+#Wed Nov 23 16:31:57 PST 2016
 target24.type=ClassTarget
 target16.name=HomeScreen
 class.Explosion.image=explosion.png
@@ -111,7 +111,6 @@ dependency52.to=CipherActorOne
 target45.width=120
 class.GermanyMapScreen.superclass=MapScreen
 target2.type=ClassTarget
-class.AttackButton.superclass=greenfoot.Actor
 dependency60.from=FranceMapScreen
 dependency36.type=UsesDependency
 dependency46.to=ClientRequestManager
@@ -163,6 +162,7 @@ class.EnemyStrategy.superclass=
 dependency10.type=UsesDependency
 class.StartButton.image=start_game.png
 dependency62.type=UsesDependency
+class.EnemySoldier.image=soldier.png
 target36.naviview.expanded=true
 target26.naviview.expanded=true
 class.Ammunition.superclass=greenfoot.Actor
@@ -554,7 +554,7 @@ target16.height=50
 readme.x=10
 target9.showInterface=false
 target38.typeParameters=
-class.EnemyTank.image=tank1.png
+class.EnemyTank.image=tank.png
 target3.name=CipherActor
 target29.width=120
 dependency8.type=UsesDependency
@@ -696,7 +696,7 @@ target1.y=250
 target1.x=190
 target44.height=50
 dependency44.to=CipherSelector
-class.EnemyPlane.image=plane.png
+class.EnemyPlane.image=plane .png
 dependency59.type=UsesDependency
 target3.width=110
 target5.naviview.expanded=true

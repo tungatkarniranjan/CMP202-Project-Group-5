@@ -130,26 +130,39 @@ public class FranceMapScreen extends MapScreen
                         }
                        
                 }
+                
           }
         }
     }   
     
     public void plotCities(int targetCity){
  
-        int x = 0;
-        int y = 0;
+        int xPos = 500;
+        int x = 450;
+        int y = 350;
         world = getWorld();
-        for(int i = 0; i < CityStore.size(); i++)
-        {
-            world.addObject(CityStore.get(i), x+100, y+100);
-            world.showText(CityStore.get(i).cityName, x+100, y+150);
+        for(int i = 0; i < CityStore.size()/2; i++)
+        { 
+            world.addObject(CityStore.get(i), x, y);
+            world.showText(CityStore.get(i).cityName, x, y+70);
             if(targetCity == i){
-                this.xTarget = x + 100;
-                this.yTarget = y + 100;
+                this.xTarget = x;
+                this.yTarget = y;
             }
-            
-            x = x + 400;
-            y = y + 350;
+            x = x + 450;
+        }
+        x = xPos;
+        y = y + 350;
+        for(int j = CityStore.size()/2; j < CityStore.size(); j++)
+        {
+            world.addObject(CityStore.get(j), x, y);
+            world.showText(CityStore.get(j).cityName,x , y+70);
+            if(targetCity == j)
+            {
+                this.xTarget = x;
+                this.yTarget = y;
+            }
+            x = x + 450;
         }
         
     }

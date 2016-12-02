@@ -58,7 +58,7 @@ public class CipherActorOne extends CipherActor
 
 	// Will return an actor of Hint Class specific for that cipher
 	public Object getHint() {
-		GreenfootImage cityImg = new GreenfootImage("./images/hint.png");
+		GreenfootImage cityImg = new GreenfootImage("./images/hint1.png");
 		return cityImg;
 	}
 
